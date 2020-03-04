@@ -16,7 +16,7 @@ const routes: Routes = [
             loadChildren: () =>
               import('../location/location.module').then(m => m.LocationPageModule),
               canActivate: [AuthGuard]
-          }
+          },
         ]
       },
       {
