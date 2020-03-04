@@ -9,6 +9,7 @@ styleUrls: ['./login.page.scss'],
 export class LoginPage implements OnInit {
   username: string;
   password: string;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private authService: AuthenticationService,
@@ -17,12 +18,14 @@ export class LoginPage implements OnInit {
   
   ngOnInit() {
   }
+  
   login() {
     this.authService.login(this.username, this.password);
     this.username = null;
     this.password = null;
     this.goHome();
   }
+
   goHome() {
     this.router.navigateByUrl( 'tabs/location' );
   }
