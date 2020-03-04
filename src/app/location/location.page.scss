@@ -23,10 +23,14 @@ ion-col {
 
 .header {
   font-weight: bold;
-  font-size: medium;
+  font-size: small;
   color: rbga(180,180,180,1)
 }
 
 .content {
-  font-size: small;
+  font-size: smaller;
+}
+
+.locations:hover {
+  
 }
