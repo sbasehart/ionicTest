@@ -1,17 +1,197 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header no-border class="bar bar-subheader">
+  <ion-toolbar mode="ios">
     <ion-title>
       Items
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Items</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-list lines="none">
+    <ion-item *ngFor="let item of items">
+      <ion-grid>
+        
+        <ion-row>
+          <ion-col>
+            Route: {{item.routeId}} | {{item.routeName}}
+          </ion-col>
+          <ion-col>
+            Stop: {{item.stopId}}
+          </ion-col>
+          <ion-col>
+            Vendor: {{item.vendorId}} | {{item.vendorName}}
+          </ion-col>
+          <ion-col>
+            Driver ID: {{item.driverId}}<br>
+            Team: {{item.teamReferenceId}}
+          </ion-col>
+        </ion-row>
 
-  <app-explore-container name="Items page"></app-explore-container>
+
+        <ion-row>
+          <ion-col>
+            Stop Status: {{item.stopStatus}}
+          </ion-col>
+          <ion-col>
+            Stop #: {{item.stopNo}}
+          </ion-col>
+          <ion-col>
+            Account: {{item.accountName}}
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row class="header">
+          <ion-col>
+            Item Pkg ID
+          </ion-col>
+          <ion-col>
+            SKU
+          </ion-col>
+          <ion-col>
+            Item Type
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            {{item.itemPkgId}}
+          </ion-col>
+          <ion-col>
+            {{item.itemSku}}
+          </ion-col>
+          <ion-col>
+            {{item.itemType}}
+          </ion-col>
+        </ion-row>
+
+        <br>
+
+        <ion-row class="header">
+          <ion-col>
+            Item Desc
+          </ion-col>
+          <ion-col>
+            Price
+          </ion-col>
+          <ion-col>
+            Adjusted Price
+          </ion-col>
+        </ion-row>
+        <ion-row class="content">
+          <ion-col>
+            {{item.itemDesc1}}
+            {{item.itemDesc2}}
+          </ion-col>
+          <ion-col>
+            {{item.price}}
+          </ion-col>
+          <ion-col>
+            {{item.adjustedPrice}}
+          </ion-col>
+        </ion-row>
+
+        <br>
+
+        <ion-row class="header">
+          <ion-col>
+            Order QTY
+          </ion-col>
+          <ion-col>
+            Last Order QTY
+          </ion-col>
+          <ion-col>
+            Exception QTY
+          </ion-col>
+        </ion-row>
+        <ion-row class="content">
+          <ion-col>
+            {{item.orderQty}}
+          </ion-col>
+          <ion-col>
+            {{item.lastOrderQty}}
+          </ion-col>
+          <ion-col>
+            {{item.exceptionQty}}
+          </ion-col>
+        </ion-row>
+
+        <br>
+
+        <ion-row class="header">
+          <ion-col>
+            Even Exchange
+          </ion-col>
+          <ion-col>
+            Pickup Only
+          </ion-col>
+          <ion-col>
+            Active
+          </ion-col>
+          <ion-col>
+            Billable
+          </ion-col>
+        </ion-row>
+        <ion-row class="content">
+          <ion-col>
+            <ion-checkbox checked="item.isEvenExchange"></ion-checkbox>
+          </ion-col>
+          <ion-col>
+            <ion-checkbox checked="item.isPickupOnly"></ion-checkbox>
+          </ion-col>
+          <ion-col>
+            <ion-checkbox checked="item.isActive"></ion-checkbox>
+          </ion-col>
+          <ion-col>
+            <ion-checkbox checked="item.isBillable"></ion-checkbox>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="header">
+          <ion-col>
+            Item Status
+          </ion-col>
+          <ion-col>
+            Deliver Date
+          </ion-col>
+          <ion-col>
+            Refusal Reason(s)
+          </ion-col>
+          <ion-col>
+            Rated Value
+          </ion-col>
+        </ion-row>
+        <ion-row class="content">
+          <ion-col>
+            {{item.itemStatus}}
+          </ion-col>
+          <ion-col>
+            {{item.deliverDate}}
+          </ion-col>
+          <ion-col>
+            {{item.refusalReason}}
+          </ion-col>
+          <ion-col>
+            {{item.ratedValue}}
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="header">
+          <ion-col>
+            Notes
+          </ion-col>
+        </ion-row>
+        <ion-row class="content">
+          <ion-col>{{item.notes}}</ion-col>
+        </ion-row>
+
+
+        <ion-row>
+          <ion-col>
+            Last updated by {{item.updatedBy}} on {{item.updateDate}}
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </ion-item>
+  </ion-list>
 </ion-content>

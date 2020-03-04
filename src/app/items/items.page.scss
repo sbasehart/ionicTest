@@ -1,3 +1,28 @@
 ion-content ion-toolbar {
   --background: translucent;
 }
+
+ion-item {
+  border: 1px gray solid;
+  margin: 5px auto;
+  max-width: 95%;
+  box-shadow: 2px 3px 5px black;
+}
+
+ion-row {
+  border-bottom: 1px gray solid
+}
+
+ion-col {
+  border-right: 1px gray solid
+}
+
+.header {
+  font-weight: bold;
+  font-size: medium;
+  color: rbga(180,180,180,1)
+}
+
+.content {
+  font-size: small;
+}
