@@ -98,7 +98,7 @@ export class ItemsPage implements OnInit {
       ratedValue: 35,
       saleType: 'wrhwhwr',
       itemStatus: 'rwghtrh',
-      isActive: true,
+      isActive: false,
       serialNumber: 'whtre',
       sR: 'wrh',
       refusalReason: 'wrong color',
@@ -111,7 +111,7 @@ export class ItemsPage implements OnInit {
       updatedBy: 'vedgve',
       updateDate: ('2020-01-16T16:00:00'),
       accountName: 'wehgthtw',
-      isBillable: false,  
+      isBillable: true,  
     }
   ];
 

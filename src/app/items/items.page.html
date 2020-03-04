@@ -10,37 +10,66 @@
   <ion-list lines="none">
     <ion-item *ngFor="let item of items">
       <ion-grid>
-        
+
+        <ion-row class="header">
+          <ion-col>
+            Route: 
+          </ion-col>
+          <ion-col>
+            Stop:  
+          </ion-col>
+          <ion-col>
+            Vendor:  
+          </ion-col>
+          <ion-col>
+            Driver ID:  
+          </ion-col>
+          <ion-col>
+            Team Reference ID: 
+          </ion-col>
+        </ion-row>
         <ion-row>
           <ion-col>
-            Route: {{item.routeId}} | {{item.routeName}}
+            {{item.routeId}} : {{item.routeName}}
           </ion-col>
           <ion-col>
-            Stop: {{item.stopId}}
+            {{item.stopId}}
           </ion-col>
           <ion-col>
-            Vendor: {{item.vendorId}} | {{item.vendorName}}
+            {{item.vendorId}} : {{item.vendorName}}
           </ion-col>
           <ion-col>
-            Driver ID: {{item.driverId}}<br>
-            Team: {{item.teamReferenceId}}
+            {{item.driverId}}
+          </ion-col>
+          <ion-col>
+            {{item.teamReferenceId}}
+          </ion-col>
+        </ion-row>
+        <br>
+        <ion-row class="header">
+          <ion-col>
+            Stop Status: 
+          </ion-col>
+          <ion-col>
+            Stop #: 
+          </ion-col>
+          <ion-col>
+            Account: 
+          </ion-col>
+        </ion-row>
+        <ion-row class="content">
+          <ion-col>
+            {{item.stopStatus}}
+          </ion-col>
+          <ion-col>
+            {{item.stopNo}}
+          </ion-col>
+          <ion-col>
+            {{item.accountName}}
           </ion-col>
         </ion-row>
 
-
-        <ion-row>
-          <ion-col>
-            Stop Status: {{item.stopStatus}}
-          </ion-col>
-          <ion-col>
-            Stop #: {{item.stopNo}}
-          </ion-col>
-          <ion-col>
-            Account: {{item.accountName}}
-          </ion-col>
-        </ion-row>
-
-
+        <br>
         <ion-row class="header">
           <ion-col>
             Item Pkg ID
@@ -52,7 +81,7 @@
             Item Type
           </ion-col>
         </ion-row>
-        <ion-row>
+        <ion-row class="content">
           <ion-col>
             {{item.itemPkgId}}
           </ion-col>
@@ -79,7 +108,7 @@
         </ion-row>
         <ion-row class="content">
           <ion-col>
-            {{item.itemDesc1}}
+            {{item.itemDesc1}} --
             {{item.itemDesc2}}
           </ion-col>
           <ion-col>
@@ -133,19 +162,19 @@
         </ion-row>
         <ion-row class="content">
           <ion-col>
-            <ion-checkbox checked="item.isEvenExchange"></ion-checkbox>
+            <ion-checkbox [checked]="item.isEvenExchange"></ion-checkbox>
           </ion-col>
           <ion-col>
-            <ion-checkbox checked="item.isPickupOnly"></ion-checkbox>
+            <ion-checkbox [checked]="item.isPickupOnly"></ion-checkbox>
           </ion-col>
           <ion-col>
-            <ion-checkbox checked="item.isActive"></ion-checkbox>
+            <ion-checkbox [checked]="item.isActive"></ion-checkbox>
           </ion-col>
           <ion-col>
-            <ion-checkbox checked="item.isBillable"></ion-checkbox>
+            <ion-checkbox [checked]="item.isBillable"></ion-checkbox>
           </ion-col>
         </ion-row>
-
+        <br>
         <ion-row class="header">
           <ion-col>
             Item Status
@@ -175,6 +204,7 @@
           </ion-col>
         </ion-row>
 
+        <br>
         <ion-row class="header">
           <ion-col>
             Notes
@@ -184,8 +214,8 @@
           <ion-col>{{item.notes}}</ion-col>
         </ion-row>
 
-
-        <ion-row>
+        <br>
+        <ion-row ion-row class="header">
           <ion-col>
             Last updated by {{item.updatedBy}} on {{item.updateDate}}
           </ion-col>
