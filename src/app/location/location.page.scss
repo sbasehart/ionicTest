@@ -1,7 +1,32 @@
+ion-content, ion-list {
+  background-color: lavender;
+}
+
 ion-content ion-toolbar {
   --background: translucent;
 }
 
-ion-content, ion-list {
-  background-color: lavender;
+ion-item {
+  margin: 5px auto;
+  max-width: 95%;
+  box-shadow: 2px 3px 5px grey;
+  animation: fadeIn 2s ease-out;
+  border-radius: 25px;
+}
+
+ion-row {
+  border-bottom: 1px gray solid;
+}
+
+ion-col {
+}
+
+.header {
+  font-weight: bold;
+  font-size: medium;
+  color: rbga(180,180,180,1)
+}
+
+.content {
+  font-size: small;
 }
