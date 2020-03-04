@@ -16,4 +16,9 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
   ],
   declarations: [ProfilePage]
 })
-export class ProfilePageModule {}
+export class ProfilePageModule {
+
+
+
+
+}
