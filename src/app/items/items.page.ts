@@ -118,5 +118,6 @@ export class ItemsPage implements OnInit {
   constructor() {}
   
   ngOnInit() {
+    
   }
 }

@@ -16,4 +16,9 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
   ],
   declarations: [LocationPage]
 })
-export class LocationPageModule {}
+export class LocationPageModule {
+
+
+
+  
+}
