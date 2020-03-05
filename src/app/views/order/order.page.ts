@@ -24,7 +24,7 @@ export class OrderPage implements OnInit {
   ) {}
 
   ionViewWillEnter() {
-    this.orderId = activatedRoute.snapshot.params['id'];
+    this.orderId = this.activatedRoute.snapshot.params['id'];
     if ( _.isUndefined(this.orderId)) {
       // new order is created
       this.isEdit = true;
@@ -34,6 +34,7 @@ export class OrderPage implements OnInit {
       this.order = this.ordersService.getOrder(this.orderId);
     }
   }
+
   ionViewWillLeave() {
     // reset page properties for proper init/enter conditions
     this.order = undefined;
