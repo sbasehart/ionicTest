@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {  } from "module";
 import { Item } from '../items/items.page';
 
 export const Order = [
@@ -33,9 +32,13 @@ export const Order = [
 export class OrdersPage {
 
   orders = []
+  items = []
 
   constructor() {
     this.orders = Order
+    this.items = Item
+    console.log(this.orders)
   }
+
 
 }
