@@ -5,10 +5,10 @@ export class Order {
     id: number
     customerId: string;
     salesPerson: string;
-    status: string
+    status: string;
     soNumber: number;
     itemCount: number;
-    items: Item[];
+    items: any[];
     orderDate: Date;
     pickupDate: Date;
     deliverDate: Date;
