@@ -7,7 +7,8 @@
 </ion-header>
 
 <ion-content>
-    <ion-card href="/views/order-details" class="locations" *ngFor="let loc of locations">
+  <ion-list>
+    <ion-item href="/views/order-details" class="locations" *ngFor="let loc of locations">
       <ion-grid>
         <ion-row class="header">
           <ion-col><h4>Status</h4></ion-col>
@@ -22,5 +23,6 @@
           <ion-col><div><ion-icon name="call-outline"></ion-icon> {{ loc.phone1 }} | <ion-icon name="call-outline"></ion-icon>{{ loc.email }}</div></ion-col>
         </ion-row>
       </ion-grid>
-    </ion-card>
+    </ion-item>
+  </ion-list>
 </ion-content>

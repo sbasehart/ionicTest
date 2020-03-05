@@ -10,7 +10,7 @@
   <ion-list lines="none">
     <ion-item class="orders" *ngFor="let order of orders">
       <ion-grid >
-        <ion-colsize="11">
+        <ion-col size="11">
           <ion-row class="header">
           <ion-col>
             Order #
@@ -56,10 +56,11 @@
           <ion-col href='tabs/location'>
             {{order.clientLocationId}}
           </ion-col>
-         </ion-row></ion-col>
-        
-
-         <ion-fab-button routerLink="['/order-detail/'], order.id"><ion-icon name="chevron-forward-outline"></ion-icon></ion-fab-button>
+         </ion-row>
+        </ion-col>
+        <ion-col>
+          <ion-fab-button routerLink="['/order-detail/'], order.id"><ion-icon name="chevron-forward-outline"></ion-icon></ion-fab-button>
+        </ion-col>
       </ion-grid>
     </ion-item>
   </ion-list>
