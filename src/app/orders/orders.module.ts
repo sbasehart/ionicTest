@@ -4,14 +4,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { OrdersPage } from './orders.page';
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    ExploreContainerComponentModule,
     RouterModule.forChild([{ path: '', component: OrdersPage }])
   ],
   declarations: [OrdersPage]
@@ -19,5 +17,5 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 export class OrdersPageModule {
 
-  
+
 }

@@ -1,14 +1,17 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Order } from 'src/app/classes/orders';
 import * as _ from 'lodash';
+
 @Component({
   selector: 'app-order-detail',
   templateUrl: './order-detail.component.html',
   styleUrls: ['./order-detail.component.scss'],
 })
+
 export class OrderDetailComponent {
   @Input() order: Order;
   @Input() isEdit: boolean;
+
   @Output() saveOrderEvent = new EventEmitter<Order>();
   @Output() editOrderEvent = new EventEmitter<Order>();
   @Output() deleteOrderEvent = new EventEmitter<Order>();
