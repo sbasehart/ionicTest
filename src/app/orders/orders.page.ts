@@ -36,7 +36,7 @@ export class OrdersPage {
 
   constructor() {
     this.orders = Order
-    this.items = Item
+    this.items = this.orders
     console.log(this.orders)
   }
 
