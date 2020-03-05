@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Item } from '../classes/items';
+import { ItemsService } from '../services/data/items.service';
 
 @Component({
   selector: 'app-items',
@@ -8,10 +10,11 @@ import { Component, OnInit } from '@angular/core';
 
 export class ItemsPage implements OnInit {
 
-  items = []
+  items: Item[] = []
 
-  constructor() {}
+  constructor(private itemsService: ItemsService) {}
   
   ngOnInit() {
+    this.items = this.itemsService.getItems()
   }
 }
