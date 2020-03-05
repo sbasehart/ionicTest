@@ -10,7 +10,6 @@ import * as _ from 'lodash';
   styleUrls: ['./order.page.scss'],
 })
 
-
 export class OrderPage implements OnInit {
   orderId: number;
   order: Order;

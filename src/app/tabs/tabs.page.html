@@ -1,57 +1,59 @@
 <ion-tabs main>
 
   <ion-menu side="start" type="overlay" menuId="mainMenu" class="main-menu">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Main Menu</ion-title>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Main Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item href="settings" routerDirection="root">Settings</ion-item>
+        <ion-item href="tabs/profile" routerDirection="root">Profile</ion-item>
+        <ion-item (click)="logout()">Logout</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <!-- end header menu definition -->
+  <!-- begin header -->
+  <ion-header no-border>
+    <ion-toolbar mode="ios">
+      <ion-title>
+        OST <ion-icon name="arrow-forward-circle-outline"></ion-icon>N Demand
+      </ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
-  <ion-content>
-    <ion-list>
-      <ion-item href="settings" routerDirection="root">Settings</ion-item>
-      <ion-item href="tabs/profile" routerDirection="root">Profile</ion-item>
-      <ion-item (click)="logout()">Logout</ion-item>
-</ion-list>
-  </ion-content>
-</ion-menu>
-<!-- end header menu definition -->
-<!-- begin header -->
-<ion-header no-border>
-  <ion-toolbar mode="ios">
-    <ion-title>
-    OST <ion-icon name="arrow-forward-circle-outline"></ion-icon>N Demand
-    </ion-title>
-    <ion-buttons slot="start">
-      <ion-menu-button autoHide="false"></ion-menu-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-<!-- end header -->
-<ion-tabs main>
-<!-- filler header --> 
-<ion-header no-border><ion-toolbar></ion-toolbar></ion-header>
-  
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="location">
-      <ion-icon name="pin-outline"></ion-icon>
-      <ion-label>Locations</ion-label>
-    </ion-tab-button>
+  <!-- end header -->
+  <ion-tabs main>
+    <!-- filler header -->
+    <ion-header no-border>
+      <ion-toolbar></ion-toolbar>
+    </ion-header>
 
-    <ion-tab-button tab="orders">
-      <ion-icon name="cart-outline"></ion-icon>
-      <ion-label>Orders</ion-label>
-    </ion-tab-button>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="location">
+        <ion-icon name="pin-outline"></ion-icon>
+        <ion-label>Locations</ion-label>
+      </ion-tab-button>
 
-    <ion-tab-button tab="items">
-      <ion-icon name="cash-outline"></ion-icon>
-      <ion-label>Items</ion-label>
-    </ion-tab-button>
+      <ion-tab-button tab="orders">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-label>Orders</ion-label>
+      </ion-tab-button>
 
-    <ion-tab-button tab="profile">
-      <ion-icon name="people-circle-outline"></ion-icon>
-      <ion-label>Profile</ion-label>
-    </ion-tab-button>
+      <ion-tab-button tab="items">
+        <ion-icon name="cash-outline"></ion-icon>
+        <ion-label>Items</ion-label>
+      </ion-tab-button>
 
-  </ion-tab-bar>
+      <ion-tab-button tab="profile">
+        <ion-icon name="people-circle-outline"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-tab-button>
 
-</ion-tabs>
+    </ion-tab-bar>
+
+  </ion-tabs>

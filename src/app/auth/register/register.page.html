@@ -12,6 +12,7 @@
   <ion-grid>
     <ion-row justify-content-center>
       <ion-col align-self-center>
+        <form #registerForm (ngSubmit)="register()">
         <ion-item>
           <ion-label stacked>E-mail</ion-label>
           <ion-input [(ngModel)]="email" placeholder="email@example.com"></ion-input>
@@ -31,13 +32,13 @@
         <ion-item>
           <ion-label>Client</ion-label>
           <ion-select placeholder="Select One">
-            <ion-select-option value="f">{{client.id}}</ion-select-option>
+            <ion-select-option *ngFor="let client of user.clientId">{{client.name}}</ion-select-option>
           </ion-select>
         </ion-item>
-        <ion-button (click)="login()" expand="block">
+        <ion-button type="submit" expand="block">
         Add User
         </ion-button>
-        <ion-button expand="block" color="secondary" routerLink="/register" routerDirection="forward">Register</ion-button>
+      </form>
       </ion-col>
     </ion-row>
   </ion-grid>

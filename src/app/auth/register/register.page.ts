@@ -9,13 +9,15 @@ import { User } from 'src/app/classes/users';
 })
 export class RegisterPage implements OnInit {
 
-  constructor(private registerService: UsersService) { }
+  constructor( 
+    private registerService: UsersService
+    ) { }
 
   ngOnInit() {
   }
 
-  register(ngForm) {
-    this.registerService.createUser(newUser: User): 
+  register(registerForm) {
+    
   }
 
 }

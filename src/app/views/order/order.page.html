@@ -9,9 +9,6 @@
   <app-order-detail [order]="order" [isEdit]="isEdit" (saveOrderEvent)="saveOrder($event)"
     (editOrderEvent)="editOrder($event)" (deleteOrderEvent)="deleteOrder($event)"></app-order-detail>
   <ion-list lines="none">
-    <ion-item *ngFor="let o of orders; let i = index">
-      <ion-card routerLink="/tabs/orders/order-details/{{ o.id }}" routerDirection="forward">
-      </ion-card>
-    </ion-item>
+    <ion-card href="tabs/order">
   </ion-list>
 </ion-content>
