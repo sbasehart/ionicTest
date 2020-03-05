@@ -2,7 +2,9 @@ import { Platform } from '@ionic/angular';
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { BehaviorSubject } from 'rxjs';
+
 const TOKEN_KEY = 'auth-token';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -32,8 +34,8 @@ export class AuthenticationService {
       });
     });
   }
-  login(username, password) {
-    const accessToken = btoa(username + ':' + password);
+  login(email, password) {
+    const accessToken = btoa(email + ':' + password);
     const token = 'Bearer ' + accessToken;
     return this.storage.set(TOKEN_KEY, token).then(() => {
       this.authenticationState.next(true);

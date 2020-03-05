@@ -7,7 +7,7 @@ templateUrl: './login.page.html',
 styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  username: string;
+  email: string;
   password: string;
 
   constructor(
@@ -20,8 +20,8 @@ export class LoginPage implements OnInit {
   }
   
   login() {
-    this.authService.login(this.username, this.password);
-    this.username = null;
+    this.authService.login(this.email, this.password);
+    this.email = null;
     this.password = null;
     this.goHome();
   }

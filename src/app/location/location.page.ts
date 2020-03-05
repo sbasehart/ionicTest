@@ -9,7 +9,7 @@ export class LocationPage {
 
   locations = [
     {
-      _id: 'fafa',
+      id: 'fafa',
       name: 'Rialto',
       storeNumber: '12324',
       address1: '111 Orange dr',
@@ -27,7 +27,7 @@ export class LocationPage {
       active: false,
     },
     {
-      _id: 'fafa',
+      id: 'fafa',
       name: 'Pomona',
       storeNumber: '12324',
       address1: '111 Blue dr',
