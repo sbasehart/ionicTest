@@ -32,11 +32,9 @@ export const Order = [
 export class OrdersPage {
 
   orders = []
-  items = []
 
   constructor() {
     this.orders = Order
-    this.items = Order.items
     console.log(this.orders)
   }
 
