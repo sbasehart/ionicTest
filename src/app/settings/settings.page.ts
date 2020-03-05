@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Client } from '../classes/clients';
+import { ClientsService } from '../services/data/clients.service';
 
 @Component({
   selector: 'app-settings',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsPage implements OnInit {
 
-  constructor() { }
+  clients: Client[] = []
+
+  constructor(private clientService: ClientsService) { }
 
   ngOnInit() {
+    this.clients = this.clientService.getClients()
   }
 
 }
