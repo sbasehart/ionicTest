@@ -1,15 +1,15 @@
-<ion-header>
-  <ion-header no-border>
-    <ion-toolbar mode="ios">
-      <ion-title>
-        View Item
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <app-item-detail [item]="item" [isEdit]="isEdit" (saveItemEvent)="saveItem($event)"
-      (editItemEvent)="editItem($event)" (deleteItemEvent)="deleteItem($event)"></app-item-detail>
-    <ion-list lines="none">
-        <ion-card href="tabs/items"></ion-card>
-    </ion-list>
-  </ion-content>
+<ion-header no-border>
+  <ion-toolbar mode="ios">
+    <ion-title>
+      View Item
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-item-detail [item]="item" [isEdit]="isEdit" (saveItemEvent)="saveItem($event)" (editItemEvent)="editItem($event)"
+    (deleteItemEvent)="deleteItem($event)"></app-item-detail>
+  <ion-list lines="none">
+    <ion-card href="tabs/items"></ion-card>
+  </ion-list>
+</ion-content>

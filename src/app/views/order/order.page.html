@@ -5,6 +5,8 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
+
 <ion-content>
   <app-order-detail [order]="order" [isEdit]="isEdit" (saveOrderEvent)="saveOrder($event)"
     (editOrderEvent)="editOrder($event)" (deleteOrderEvent)="deleteOrder($event)"></app-order-detail>
