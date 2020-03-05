@@ -3,12 +3,12 @@ import { Location } from '../classes/locations';
 import { LocationsService } from '../services/data/locations.service';
 
 @Component({
-  selector: 'app-locations',
-  templateUrl: 'locations.page.html',
-  styleUrls: ['locations.page.scss']
+  selector: 'app-location',
+  templateUrl: 'location.page.html',
+  styleUrls: ['location.page.scss']
 })
 
-export class LocationsPage implements OnInit {
+export class LocationPage implements OnInit {
 
   locations: Location[] = []
 

@@ -1,0 +1,13 @@
+<ion-header no-border>
+  <ion-toolbar mode="ios">
+    <ion-title>
+    View Order
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <app-order-detail [order]="order" [isEdit]="isEdit" (saveOrderEvent)="saveOrder($event)" (editOrderEvent)="editOrder($event)" (deleteOrderEvent)="deleteOrder($event)" ></app-order-detail>
+  <ion-list lines="none">
+    <ion-item *ngFor="let o of orders; let i = index">
+      <ion-card routerLink="/tabs/orders/order-details/{{ o.id }}" routerDirection="forward">
+</ion-content>
