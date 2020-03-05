@@ -11,6 +11,14 @@ const routes: Routes = [
     path: 'order',
     loadChildren: () => import('./views/order/order.module').then( m => m.OrderPageModule)
   },
+  {
+    path: 'item',
+    loadChildren: () => import('./views/item/item.module').then( m => m.ItemPageModule)
+  },
+  {
+    path: 'location',
+    loadChildren: () => import('./views/location/location.module').then( m => m.LocationPageModule)
+  },
 ];
 
 @NgModule({
