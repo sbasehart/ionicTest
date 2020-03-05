@@ -6,7 +6,7 @@ const routes: Routes = [
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: 'settings', loadChildren: './settings/settings.module#SettingsPageModule', canActivate: [AuthGuard] },
   { path: 'login', loadChildren: './auth/login/login.module#LoginPageModule' },
-  { path: 'register', loadChildren: './auth/register/register.module#RegisterPageModule' },
+  { path: 'register', loadChildren: './auth/register/register.module#RegisterPageModule', canActivate: [AuthGuard] },
   {
     path: 'view-order',
     loadChildren: () => import('./views/order/order.module').then( m => m.OrderPageModule)
