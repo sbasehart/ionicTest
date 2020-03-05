@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ItemsService } from 'src/app/services/data/items.service';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Item } from 'src/app/classes/items';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-item-detail',
@@ -8,14 +8,40 @@ import { Item } from 'src/app/classes/items';
   styleUrls: ['./item-detail.component.scss'],
 })
 
-export class ItemDetailComponent implements OnInit {
+export class ItemDetailComponent {
+  @Input() item: Item;
+  @Input() isEdit: boolean;
 
-  item: Item[] = [  ]
+  @Output() saveItemEvent = new EventEmitter<Item>();
+  @Output() editItemEvent = new EventEmitter<Item>();
+  @Output() deleteItemEvent = new EventEmitter<Item>();
 
-  constructor( private itemService: ItemsService) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.item = this.itemService.getItem()
+  saveItem() {
+    if (!this.isValidForm()) {
+      return false;
+    }
+    this.saveItemEvent.emit(this.item);
   }
 
+  editItem() {
+    this.editItemEvent.emit(this.item);
+  }
+
+  deleteItem() {
+    this.deleteItemEvent.emit(this.item);
+  }
+
+  isValidForm() {
+    if (_.isUndefined(this.item.id)) {
+      console.log(`Invalid item.id: ${this.item.id}`);
+      return false;
+    }
+    if (_.isEmpty(this.item.id)) {
+      console.log(`Invalid item.id: ${this.item.id}`);
+      return false;
+    }
+    return true;
+  }
 }
