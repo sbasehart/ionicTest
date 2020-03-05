@@ -28,7 +28,7 @@
             Team Reference ID: 
           </ion-col>
         </ion-row>
-        <ion-row>
+        <ion-row class="content">
           <ion-col>
             {{item.routeId}} : {{item.routeName}}
           </ion-col>
@@ -174,7 +174,9 @@
             <ion-checkbox [checked]="item.isBillable"></ion-checkbox>
           </ion-col>
         </ion-row>
+
         <br>
+        
         <ion-row class="header">
           <ion-col>
             Item Status

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Order } from '../../classes/orders';
 import { CustomDate } from '../../classes/custom-date';
 import { Orders } from '../../assets/data/orders';
+import { Item } from 'src/app/classes/items';
+import { Items } from 'src/app/assets/data/items';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +11,7 @@ import { Orders } from '../../assets/data/orders';
 export class OrdersService {
 
   orders: Order[] = Orders;
+  items: Item[] = Items;
 
   constructor() {
     console.log(this.orders);
@@ -36,7 +39,7 @@ export class OrdersService {
     }).indexOf(id);
     this.orders.splice(index, 1);
   }
-  
+
   nextOrderId(): number {
     const maxOrderId = this.orders.reduce((max, order) => (order.id > max) ? order.id : max, this.orders[0].id);
     const newOrderId = (maxOrderId + 1);

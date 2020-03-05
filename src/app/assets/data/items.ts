@@ -2,7 +2,7 @@ import { Item } from 'src/app/classes/items';
 
 export const Items: Item[] = [
     {
-        id: 123,
+      id: 123,
       routeId: 'fsafw',
       stopId: 'swffwf',
       vendorId: 'stvdvdvring',
@@ -54,7 +54,7 @@ export const Items: Item[] = [
       isBillable: false,  
     },
     {
-        id: 1235,
+      id: 1235,
       routeId: 'fgrew',
       stopId: 'rtwgw',
       vendorId: 'gwrgwer',
@@ -85,8 +85,8 @@ export const Items: Item[] = [
       lastOrderQty: 35,
       exceptionQty: 35,
       packageItemSeq: 35,
-      price: 35,
-      adjustedPrice: 35,
+      price: 35.00,
+      adjustedPrice: 35.00,
       ratedValue: 35,
       saleType: 'wrhwhwr',
       itemStatus: 'rwghtrh',

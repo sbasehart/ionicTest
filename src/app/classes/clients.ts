@@ -1,6 +1,5 @@
 import * as _ from 'lodash';
 import { Locations }  from '../assets/data/locations'
-import { CustomDate } from './custom-date';
 
 export class Client {
 
