@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { OrdersPage } from './orders.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
-import { OrderDetailComponent } from './order-detail/order-detail.component';
 
 @NgModule({
   imports: [
@@ -15,6 +14,6 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
     ExploreContainerComponentModule,
     RouterModule.forChild([{ path: '', component: OrdersPage }])
   ],
-  declarations: [OrdersPage, OrderDetailComponent]
+  declarations: [OrdersPage]
 })
 export class OrdersPageModule {}

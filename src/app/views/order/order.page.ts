@@ -14,11 +14,12 @@ import * as _ from 'lodash';
 
 export class OrderPage implements OnInit {
   orderId: number;
+  orderDate: Date;
   order: Order;
   isEdit: boolean;
 
   constructor(
-    activatedRoute: ActivatedRoute,
+    public activatedRoute: ActivatedRoute,
     private ordersService: OrdersService,
     private router: Router
   ) {}
@@ -29,7 +30,6 @@ export class OrderPage implements OnInit {
       // new order is created
       this.isEdit = true;
       this.order = new Order();
-      
     } else {
       this.order = this.ordersService.getOrder(this.orderId);
     }
