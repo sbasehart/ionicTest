@@ -10,9 +10,7 @@
     <app-item-detail [item]="item" [isEdit]="isEdit" (saveItemEvent)="saveItem($event)"
       (editItemEvent)="editItem($event)" (deleteItemEvent)="deleteItem($event)"></app-item-detail>
     <ion-list lines="none">
-      <ion-item *ngFor="let item of items; let i = index">
-        <ion-card routerLink="/tabs/items/item-details/{{ item.id }}" routerDirection="forward">
+        <ion-card href="tabs/items">
         </ion-card>
-      </ion-item>
     </ion-list>
   </ion-content>
