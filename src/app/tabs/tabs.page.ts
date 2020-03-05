@@ -21,6 +21,7 @@ export class TabsPage {
     this.menuCtrl.close('mainMenu');
     this.goHome();
   }
+  
   goHome() {
     this.router.navigateByUrl( 'tabs/location' );
   }
