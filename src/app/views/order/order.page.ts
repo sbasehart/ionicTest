@@ -14,8 +14,8 @@ import * as _ from 'lodash';
 
 export class OrderPage implements OnInit {
   orderId: number;
-  orderDate: Date;
   order: Order;
+  orderDate: Date;
   isEdit: boolean;
 
   constructor(
@@ -27,28 +27,24 @@ export class OrderPage implements OnInit {
   ionViewWillEnter() {
     this.orderId = this.activatedRoute.snapshot.params['id'];
     if ( _.isUndefined(this.orderId)) {
-      // new order is created
       this.isEdit = true;
-      this.order = new Order();
+      this.order = new Order(this.orderDate);
     } else {
       this.order = this.ordersService.getOrder(this.orderId);
     }
   }
 
   ionViewWillLeave() {
-    // reset page properties for proper init/enter conditions
     this.order = undefined;
     this.orderId = undefined;
   }
 
   ngOnInit() { }
   saveOrder(value: Order) {
-    if ( _.isEmpty(this.orderId) ) {
-      // a new order was created and must be added, 
-      // an id must be added to the new order  
+    if ( _.isEmpty(this.orderId) ) { 
       this.ordersService.createOrder(value);
     }
-    this.router.navigate(['/tabs/feed']);
+    this.router.navigate(['/tabs/order']);
   }
 
   editOrder(value: Order) {
@@ -57,6 +53,6 @@ export class OrderPage implements OnInit {
 
   deleteOrder(value: Order) {
     this.ordersService.deleteOrder(value.id);
-    this.router.navigate(['/tabs/feed']);
+    this.router.navigate(['/tabs/order']);
   }
 }

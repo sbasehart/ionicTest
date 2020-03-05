@@ -7,11 +7,11 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <app-item-detail [item]="item" [isEdit]="isEdit" (saveOrderEvent)="saveOrder($event)"
-      (editOrderEvent)="editOrder($event)" (deleteOrderEvent)="deleteOrder($event)"></app-item-detail>
+    <app-item-detail [item]="item" [isEdit]="isEdit" (saveItemEvent)="saveItem($event)"
+      (editItemEvent)="editItem($event)" (deleteItemEvent)="deleteItem($event)"></app-item-detail>
     <ion-list lines="none">
-      <ion-item *ngFor="let loc of items; let i = index">
-        <ion-card routerLink="/tabs/items/item-details/{{ loc.id }}" routerDirection="forward">
+      <ion-item *ngFor="let item of items; let i = index">
+        <ion-card routerLink="/tabs/items/item-details/{{ item.id }}" routerDirection="forward">
         </ion-card>
       </ion-item>
     </ion-list>

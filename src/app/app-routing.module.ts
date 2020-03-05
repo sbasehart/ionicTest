@@ -8,15 +8,15 @@ const routes: Routes = [
   { path: 'login', loadChildren: './auth/login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './auth/register/register.module#RegisterPageModule' },
   {
-    path: 'order',
+    path: 'view-order',
     loadChildren: () => import('./views/order/order.module').then( m => m.OrderPageModule)
   },
   {
-    path: 'item',
+    path: 'view-item',
     loadChildren: () => import('./views/item/item.module').then( m => m.ItemPageModule)
   },
   {
-    path: 'location',
+    path: 'view-location',
     loadChildren: () => import('./views/location/location.module').then( m => m.LocationPageModule)
   },
 ];

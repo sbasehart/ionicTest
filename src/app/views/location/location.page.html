@@ -6,8 +6,8 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <app-location-detail [location]="location" [isEdit]="isEdit" (saveOrderEvent)="saveOrder($event)"
-    (editOrderEvent)="editOrder($event)" (deleteOrderEvent)="deleteOrder($event)"></app-location-detail>
+  <app-location-detail [location]="location" [isEdit]="isEdit" (saveLocationEvent)="saveLocation($event)"
+    (editLocationEvent)="editLocation($event)" (deleteLocationEvent)="deleteLocation($event)"></app-location-detail>
   <ion-list lines="none">
     <ion-item *ngFor="let loc of locations; let i = index">
       <ion-card routerLink="/tabs/locations/location-details/{{ loc.id }}" routerDirection="forward">
