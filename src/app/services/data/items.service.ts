@@ -13,19 +13,22 @@ export class ItemsService {
   constructor() {
     console.log(this.items);
   }
+
   getItems(): any[] {
     return this.items;
   }
+
   getItem(id: any): any {
-    // compares URL param string to number
     const filteredItem = this.items.filter(item => item.id == id)[0];
     return filteredItem;
   }
+
   createItem(newItem: Item): number {
     newItem.id = this.nextItemId();
     this.items.push(newItem);
     return newItem.id;
   }
+
   deleteItem(id: any): any {
     console.log(`items.service.deleteItem for ${id}`);
     const index = this.items.map(item => {
@@ -33,6 +36,7 @@ export class ItemsService {
     }).indexOf(id);
     this.items.splice(index, 1);
   }
+  
   nextItemId(): number {
     const maxItemId = this.items.reduce((max, item) => (item.id > max) ? item.id : max, this.items[0].id);
     const newItemId = (maxItemId + 1);

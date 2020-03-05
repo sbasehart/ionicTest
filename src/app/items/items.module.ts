@@ -17,4 +17,8 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
   ],
   declarations: [ItemsPage, ItemDetailComponent]
 })
-export class ItemsPageModule {}
+
+export class ItemsPageModule {
+
+
+}

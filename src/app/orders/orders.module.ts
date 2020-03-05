@@ -16,4 +16,8 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
   ],
   declarations: [OrdersPage]
 })
-export class OrdersPageModule {}
+
+export class OrdersPageModule {
+
+  
+}
