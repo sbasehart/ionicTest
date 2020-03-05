@@ -60,7 +60,7 @@
 
          <br>
 
-         <ion-row class="header">
+         <ion-row class="header" >
           <ion-col>
             SKU
           </ion-col>
@@ -74,7 +74,7 @@
             Price
           </ion-col>
         </ion-row>
-        <ion-row class="content">
+        <ion-row class="content" *ngFor="let item of order.items">
           <ion-col>
             {{item.itemSku}}
           </ion-col>
@@ -118,7 +118,7 @@
               {{ order.deliverDate | date }}
             </ion-col>
             <ion-col>
-              {{order.rating}}
+              {{order.rating}} out of 5
             </ion-col>
           </ion-row>
 
