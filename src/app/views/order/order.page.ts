@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrdersService } from '../../services/data/orders.service';
 import { Order } from 'src/app/classes/orders';
-import { CustomDate } from 'src/app/classes/custom-date';
 import * as _ from 'lodash';
 
 @Component({

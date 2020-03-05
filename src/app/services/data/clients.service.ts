@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Client } from '../../classes/clients';
-import { CustomDate } from '../../classes/custom-date';
 import { Clients } from '../../assets/data/clients';
 
 @Injectable({
