@@ -1,5 +1,1 @@
 
-ionic g page auth/login
-ionic g page auth/register 
-ionic g service services/authentication
-ionic g guard services/auth
