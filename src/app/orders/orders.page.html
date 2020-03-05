@@ -1,17 +1,127 @@
 <ion-header no-border class="bar bar-subheader">
   <ion-toolbar mode="ios">
     <ion-title>
-      Locations
+      Orders
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list lines="none">
-    <ion-item class="locations" *ngFor="let loc of locations">
+    <ion-item class="orders" *ngFor="let order of orders">
       <ion-grid>
+
         <ion-row class="header">
+          <ion-col>
+            Order #
+          </ion-col>
+          <ion-col>
+            Status
+          </ion-col>
+          <ion-col>
+            Sales Person
+          </ion-col>
+          <ion-col>
+            SO
+          </ion-col>
+          <ion-col>
+            Order Amount
+          </ion-col>
+          <ion-col>
+            Item QTY
+          </ion-col>
+          <ion-col>
+            Location
+          </ion-col>
          </ion-row>
+         <ion-row class="content">
+          <ion-col>
+            {{order._id}}
+          </ion-col>
+          <ion-col>
+            {{ order.isPickedUp ? 'Picked Up' : 'Pending Pickup'}} -- {{ order.isDelivered ? 'Delivered' : 'Pending Delivery'}}
+          </ion-col>
+          <ion-col>
+            {{order.salesPerson}}
+          </ion-col>
+          <ion-col>
+            {{order.soNumber}}
+          </ion-col>
+          <ion-col>
+            {{order.orderAmount}}
+          </ion-col>
+          <ion-col>
+            {{order.itemCount}}
+          </ion-col>
+          <ion-col href='tabs/location'>
+            {{order.clientLocationId}}
+          </ion-col>
+         </ion-row>
+
+         <br>
+
+         <ion-row class="header" *ngFor="let item of {{order.items}}">
+          <ion-col>
+            SKU
+          </ion-col>
+          <ion-col>
+            Desc
+          </ion-col>
+          <ion-col>
+            QTY
+          </ion-col>
+          <ion-col>
+            Price
+          </ion-col>
+        </ion-row>
+        <ion-row class="content">
+          <ion-col>
+            {{item.itemSku}}
+          </ion-col>
+          <ion-col>
+            <b>{{item.name}}</b><br>
+            {{item.itemDesc1}} --
+            {{item.itemDesc2}}
+          </ion-col>
+          <ion-col>
+            {{item.orderQty}}
+          </ion-col>
+          <ion-col>
+            {{item.price}}
+          </ion-col>
+        </ion-row>
+
+         <br>
+
+         <ion-row class="header">
+          <ion-col size="4">
+            Receipt
+          </ion-col>
+          <ion-col>
+            Pickup Date
+          </ion-col>
+          <ion-col>
+            Delivery Date
+          </ion-col>
+          <ion-col>
+            Rating
+          </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">
+              <img [src]="order.receiptImageLocation" alt="receipt" width="100%">
+            </ion-col>
+            <ion-col>
+              {{ order.pickupDate | date }}
+            </ion-col>
+            <ion-col>
+              {{ order.deliverDate | date }}
+            </ion-col>
+            <ion-col>
+              {{order.rating}}
+            </ion-col>
+          </ion-row>
+
       </ion-grid>
     </ion-item>
   </ion-list>
