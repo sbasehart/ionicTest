@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LocationsService } from '../../services/data/locations.service';
 import { Location } from 'src/app/classes/locations';
-import { CustomDate } from 'src/app/classes/custom-date';
 import * as _ from 'lodash';
 
 @Component({
@@ -13,6 +12,7 @@ import * as _ from 'lodash';
 
 
 export class LocationPage implements OnInit {
+
   locationId: number;
   location: Location;
   isEdit: boolean;
@@ -40,6 +40,8 @@ export class LocationPage implements OnInit {
   }
 
   ngOnInit() { }
+
+
   saveLocation(value: Location) {
     if ( _.isEmpty(this.locationId) ) { 
       this.locationsService.createLocation(value);
