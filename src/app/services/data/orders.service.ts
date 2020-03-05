@@ -13,19 +13,22 @@ export class OrdersService {
   constructor() {
     console.log(this.orders);
   }
+
   getOrders(): any[] {
     return this.orders;
   }
+
   getOrder(id: any): any {
-    // compares URL param string to number
     const filteredOrder = this.orders.filter(order => order.id == id)[0];
     return filteredOrder;
   }
+
   createOrder(newOrder: Order): number {
     newOrder.id = this.nextOrderId();
     this.orders.push(newOrder);
     return newOrder.id;
   }
+
   deleteOrder(id: any): any {
     console.log(`orders.service.deleteOrder for ${id}`);
     const index = this.orders.map(order => {
@@ -33,6 +36,7 @@ export class OrdersService {
     }).indexOf(id);
     this.orders.splice(index, 1);
   }
+  
   nextOrderId(): number {
     const maxOrderId = this.orders.reduce((max, order) => (order.id > max) ? order.id : max, this.orders[0].id);
     const newOrderId = (maxOrderId + 1);
