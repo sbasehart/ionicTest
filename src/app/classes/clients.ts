@@ -9,7 +9,7 @@ export class Client {
     address2: string;
     city: string;
     state: string;
-    zip: string;
+    zip: number;
     phone1: string;
     phone2: string;
     email: string;

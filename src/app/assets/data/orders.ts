@@ -9,7 +9,7 @@ export const Orders: Order[] = [
     status: 'active',
     soNumber: 5472,
     itemCount: 2,
-    items: Item[],
+    items: [],
     orderDate: null,
     pickupDate: null,
     deliverDate: null,

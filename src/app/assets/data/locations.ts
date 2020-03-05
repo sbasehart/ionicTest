@@ -1,0 +1,40 @@
+import {Location} from 'src/app/classes/locations';
+
+export const Locations: Location[] = [
+    {
+        id: 1235,
+        name: 'Rialto',
+        storeNumber: '12324',
+        address1: '111 Orange dr',
+        address2: 'st 405',
+        city: 'rialto',
+        state: 'CA',
+        zip: '56452',
+        phone1: '999-999-999',
+        phone2: '999-999-999',
+        contact: 'Person',
+        email: 'test@test.com',
+        addedDate: null,
+        removedDate: null,
+        notes: 'thissss',
+        active: false,
+      },
+      {
+        id: 1235,
+        name: 'Pomona',
+        storeNumber: '12324',
+        address1: '111 Blue dr',
+        address2: 'st 405',
+        city: 'Pomona',
+        state: 'CA',
+        zip: '52645',
+        phone1: '999-999-999',
+        phone2: '999-999-999',
+        contact: 'People',
+        email: 'test@test.com',
+        addedDate: null,
+        removedDate: null,
+        notes: 'that',
+        active: true,
+      }
+]

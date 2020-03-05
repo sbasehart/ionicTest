@@ -34,7 +34,7 @@ export class Item {
     serialNumber: string;
     sR: string;
     refusalReason: any;
-    pictures: any[];
+    // pictures: any[];
     notes: string;
     isPickupOnly: boolean;
     isEvenExchange: boolean;
