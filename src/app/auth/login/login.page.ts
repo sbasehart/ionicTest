@@ -11,7 +11,6 @@ export class LoginPage implements OnInit {
   password: string;
 
   constructor(
-    private activatedRoute: ActivatedRoute,
     private authService: AuthenticationService,
     public router: Router
   ) { }
