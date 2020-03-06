@@ -63,7 +63,17 @@ const routes: Routes = [
     path: '',
     redirectTo: '/tabs/location',
     pathMatch: 'full'
-  }
+  },
+  {
+    path: 'order/:id',
+    children: [
+    {
+      path: '',
+      loadChildren: () =>
+  import('../views/order/order.module').then(m =>   m.OrderPageModule)
+    }
+    ]
+  },
 ];
 
 @NgModule({
