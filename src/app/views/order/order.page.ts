@@ -38,16 +38,8 @@ export class OrderPage implements OnInit {
   }
 
   ngOnInit() { 
-    // this.getOrderDetails(this.orderId)
   }
 
-  // getOrderDetails(id: any) {
-  //   this.ordersService.getOrder(id)
-  //     .subscribe((data: any) => {
-  //       this.order = data;
-  //       console.log(this.order);
-  //     });
-  // }
 
   saveOrder(value: Order) {
     if ( _.isEmpty(this.orderId) ) { 
