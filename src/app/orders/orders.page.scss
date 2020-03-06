@@ -18,6 +18,15 @@ ion-row {
   border-bottom: 1px gray solid;
 }
 
+.completed {
+  background-color: lightgreen
+}
+
+.pending {
+  background-color: pink
+}
+
+
 .header {
   font-weight: bold;
   font-size: small;

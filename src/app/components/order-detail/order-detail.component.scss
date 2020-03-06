@@ -6,6 +6,11 @@ ion-content ion-toolbar {
     --background: translucent;
 }
 
+.products {
+    width:100% !important;
+    align-items: normal;
+}
+
 ion-col {
     margin: 0 auto
 }
@@ -32,27 +37,16 @@ ion-item:hover  ion-img {
     max-width: 50%;
 }
 
-ion-label {
-    margin: 0 auto
+p {
+    margin: 12px auto;
+    padding: 0;
 }
 
 ion-input {
-    text-align: center
+    text-align: center;
+    margin: 5px
 }
 
 ion-checkbox {
     margin: 8px auto
 }
-
-.header {
-    font-weight: bold;
-    font-size: small;
-    color: rbga(180,180,180,1);
-    border-bottom: 1px gray solid;
-
-}
-  
-.content {
-    font-size: smaller;
-}
-  

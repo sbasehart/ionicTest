@@ -30,7 +30,7 @@ export const Orders: Order[] = [
     status: 'active',
     soNumber: 3456,
     itemCount: 2,
-    items: [],
+    items: Items,
     orderDate: {monthName: 'March', month: 2, day: 6, year: 2017},
     pickupDate: {monthName: 'March', month: 2, day: 6, year: 2017},
     deliverDate: {monthName: 'March', month: 2, day: 6, year: 2017},

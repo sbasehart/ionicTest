@@ -11,51 +11,54 @@
   <form>
     <ion-list>
       <ion-row>
-      <ion-col class="image-wrapper">
-        <ion-item>
-          <ion-img [src]="order.receiptImageLocation" [disabled]="!isEdit" name="receipt" width="100%"></ion-img>
-        </ion-item>
-      </ion-col>
-      <ion-row>
-        <ion-col>
-          <ion-row>
+        <ion-col class="image-wrapper">
+          <ion-item>
+            <ion-img [src]="order.receiptImageLocation" [disabled]="!isEdit" name="receipt" width="100%"></ion-img>
+          </ion-item>
+        </ion-col>
+
+        <ion-row>
+          <ion-col>
             <ion-row>
-              <ion-item>
-                <ion-label position="stacked">Id:</ion-label>
-                <ion-input required type="number" [(ngModel)]="order.id" [disabled]="!isEdit" name="id"></ion-input>
-              </ion-item>
-      
-              <ion-item>
-                <ion-label position="stacked">Customer ID:</ion-label>
-                <ion-input required type="number" [(ngModel)]="order.customerId" [disabled]="!isEdit" name="customerId">
-                </ion-input>
-              </ion-item>
-      
-              <ion-item>
-                <ion-label position="stacked">Order Date:</ion-label>
-                <ion-input required type="text"
-                  value="{{ order.orderDate.monthName + ' ' + order.orderDate.day + ', ' + order.orderDate.year }}"
-                  [disabled]="!isEdit" name="orderDate"></ion-input>
-              </ion-item>
-      
-              <ion-item>
-                <ion-label position="stacked">Sales Person:</ion-label>
-                <ion-input required type="text" [(ngModel)]="order.salesPerson" [disabled]="!isEdit" name="salesPerson">
-                </ion-input>
-              </ion-item>
-      
+              <ion-row>
+                <ion-item>
+                  <ion-label position="stacked">Order Number:</ion-label>
+                  <ion-input required type="number" [(ngModel)]="order.id" [disabled]="!isEdit" name="id"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label position="stacked">Customer ID:</ion-label>
+                  <ion-input required type="number" [(ngModel)]="order.customerId" [disabled]="!isEdit"
+                    name="customerId">
+                  </ion-input>
+                </ion-item>
+              </ion-row>
+              <ion-row>
+                <ion-item>
+                  <ion-label position="stacked">Order Date:</ion-label>
+                  <ion-input required type="text"
+                    value="{{ order.orderDate.monthName + ' ' + order.orderDate.day + ', ' + order.orderDate.year }}"
+                    [disabled]="!isEdit" name="orderDate"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label position="stacked">Sales Person:</ion-label>
+                  <ion-input required type="text" [(ngModel)]="order.salesPerson" [disabled]="!isEdit"
+                    name="salesPerson">
+                  </ion-input>
+                </ion-item>
+
+              </ion-row>
             </ion-row>
-          </ion-row>
-          <ion-row>
+            <ion-row>
 
               <ion-row>
                 <ion-col>
                   <ion-row>
                     <ion-item>
-                      <ion-label position="stacked">Delivered</ion-label>                  <br>
+                      <ion-label position="stacked">Delivered</ion-label> <br>
                       <ion-checkbox required [(ngModel)]="order.isDelivered" [disabled]="!isEdit" name="isDelivered">
                       </ion-checkbox>
-                      <br>
                       <ion-label position="stacked">On:
                       </ion-label>
                       <ion-input required type="text"
@@ -63,58 +66,84 @@
                         [disabled]="!isEdit" name="deliverDate"></ion-input>
                     </ion-item>
                     <ion-item>
-                      <ion-label position="stacked">Picked Up</ion-label>                  <br>
+                      <ion-label position="stacked">Picked Up</ion-label> <br>
                       <ion-checkbox required [(ngModel)]="order.isPickedUp" [disabled]="!isEdit" name="isPickedUp">
                       </ion-checkbox>
-                      <br>
-                      <ion-label position="stacked">On:<ion-text color="danger">*</ion-text>
+                      <ion-label position="stacked">On:
                       </ion-label>
                       <ion-input required type="text"
                         value="{{ order.pickupDate.monthName + ' ' + order.pickupDate.day + ', ' + order.pickupDate.year }}"
                         [disabled]="!isEdit" name="deliverDate"></ion-input>
                     </ion-item>
-    
-                  </ion-row>
-    
-                  <br>
-    
-                  <ion-row>
+
                     <ion-item>
                       <ion-label position="stacked"># of Items:</ion-label>
-                      <ion-input required type="text" [(ngModel)]="order.itemCount" [disabled]="!isEdit" name="itemCount">
+                      <ion-input required type="text" [(ngModel)]="order.itemCount" [disabled]="!isEdit"
+                        name="itemCount">
                       </ion-input>
                       <br>
                       <ion-label position="stacked">Order Amount:</ion-label>
-                      <ion-input currencyMask required type="number" [(ngModel)]="order.orderAmount" [disabled]="!isEdit"
-                        name="orderAmount" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+                      <ion-input currencyMask required type="number" [(ngModel)]="order.orderAmount"
+                        [disabled]="!isEdit" name="orderAmount"
+                        [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
                       </ion-input>
 
                     </ion-item>
-                    <ion-item>                    
+                    <ion-item>
                       <ion-label position="stacked">SO:</ion-label>
-                      <ion-input required type="number" [(ngModel)]="order.soNumber" [disabled]="!isEdit" name="soNumber">
+                      <ion-input required type="number" [(ngModel)]="order.soNumber" [disabled]="!isEdit"
+                        name="soNumber">
                       </ion-input>
                       <br>
                       <ion-label position="stacked">Status:</ion-label>
                       <ion-input required type="text" [(ngModel)]="order.status" [disabled]="!isEdit" name="status">
                       </ion-input>
                     </ion-item>
-    
+
                   </ion-row>
                 </ion-col>
 
               </ion-row>
-              
-          </ion-row>
-        </ion-col>
 
+            </ion-row>
+          </ion-col>
+
+
+        </ion-row>
 
       </ion-row>
-    </ion-row>
+      <ion-row >
+        <ion-item *ngFor="let item of order.items" class="products">
+          <ion-row class="products">
+
+            <ion-col>
+              <ion-label position="stacked">Item SKU</ion-label>
+              <ion-input required type="text" [(ngModel)]="item.itemSku" [disabled]="!isEdit" name="itemSku">
+              </ion-input>
+            </ion-col>
+
+            <ion-col size ="6">
+              <ion-label position="stacked">Item Name and Desc</ion-label>
+              <ion-input required type="text" [(ngModel)]="item.itemDesc1" [disabled]="!isEdit" name="itemDesc1"></ion-input>
+              <ion-input required type="text" [(ngModel)]="item.itemDesc2" [disabled]="!isEdit" name="itemDesc2"></ion-input>
+            </ion-col>
+
+            <ion-col size="3">
+              <ion-label position="stacked">Unit Price</ion-label>
+              <ion-input required type="number" [(ngModel)]="item.price" [disabled]="!isEdit" name="price">
+              </ion-input>
+            </ion-col>
+
+            <ion-col size="2">
+              <ion-label position="stacked">Item QTY</ion-label>
+              <ion-input required type="number" [(ngModel)]="item.orderQty" [disabled]="!isEdit" name="orderQty">
+              </ion-input>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-row>
 
     </ion-list>
-
-
   </form>
   <ion-fab-button *ngIf="!isEdit">
     <ion-icon name="trash" (click)="deleteOrder()"></ion-icon>

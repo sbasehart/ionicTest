@@ -8,8 +8,8 @@
 
 <ion-content>
   <ion-list lines="none">
-    <ion-item routerLink="/order/{{ order.id }}" routerDirection="forward" class="orders" *ngFor="let order of orders; let i = index">
-      <ion-grid >
+    <ion-item routerLink="/order/{{ order.id }}" routerDirection="forward" class="orders" *ngFor="let order of orders; let i = index" >
+      <ion-grid [ngClass]="order.isDelivered ? 'completed' : 'pending' ">
         <ion-col size="11">
           <ion-row class="header">
           <ion-col>
@@ -39,7 +39,7 @@
             {{order.id}}
           </ion-col>
           <ion-col>
-            {{ order.isPickedUp ? 'Picked Up' : 'Pending Pickup'}} -- {{ order.isDelivered ? 'Delivered' : 'Pending Delivery'}}
+            {{ order.isPickedUp ? 'Picked Up' : 'Pending Pickup'}} <br> {{ order.isDelivered ? 'Delivered' : 'Pending Delivery'}}
           </ion-col>
           <ion-col>
             {{order.salesPerson}}

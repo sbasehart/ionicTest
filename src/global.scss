@@ -29,6 +29,10 @@ body {
     background-color: lavender
 }
 
+ion-content, ion-list{
+    min-height: 100vh;
+}
+
 ion-row {
     text-align: center;
     align-items: center;
