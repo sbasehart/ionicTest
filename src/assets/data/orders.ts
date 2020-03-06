@@ -1,5 +1,6 @@
 import { Order } from 'src/app/classes/orders';
 import { Item } from 'src/app/classes/items';
+import { Items } from './items';
 
 export const Orders: Order[] = [
     {
@@ -9,7 +10,7 @@ export const Orders: Order[] = [
     status: 'active',
     soNumber: 5472,
     itemCount: 2,
-    items: [],
+    items: Items,
     orderDate: null,
     pickupDate: null,
     deliverDate: null,
