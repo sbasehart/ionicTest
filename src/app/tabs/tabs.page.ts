@@ -23,6 +23,6 @@ export class TabsPage {
   }
   
   goHome() {
-    this.router.navigateByUrl( 'tabs/location' );
+    this.router.navigateByUrl( 'login' );
   }
 }
