@@ -26,6 +26,11 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 body {
+    background-color: lavender
+}
+
+ion-row {
+    text-align: center
 }
 
 @keyframes fadeIn {

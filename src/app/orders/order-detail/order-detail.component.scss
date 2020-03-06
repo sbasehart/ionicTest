@@ -14,14 +14,12 @@ ion-item {
     border-radius: 25px;
 }
   
-ion-row {
-    border-bottom: 1px gray solid;
-}
-  
 .header {
     font-weight: bold;
     font-size: small;
-    color: rbga(180,180,180,1)
+    color: rbga(180,180,180,1);
+    border-bottom: 1px gray solid;
+
 }
   
 .content {

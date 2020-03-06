@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'register', loadChildren: './auth/register/register.module#RegisterPageModule', canActivate: [AuthGuard] },
   { path: 'view-order', loadChildren: './views/order/order.module#OrderPageModule', canActivate: [AuthGuard] },
   { path: 'view-location', loadChildren: './views/location/location.module#LocationPageModule', canActivate: [AuthGuard] },
-  { path: 'view-item', loadChildren: './views/item/item.module#ItemPageModulee', canActivate: [AuthGuard] },
+  { path: 'view-item', loadChildren: './views/item/item.module#ItemPageModule', canActivate: [AuthGuard] },
   
 ];
 
