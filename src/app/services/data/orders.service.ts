@@ -7,6 +7,7 @@ import { Items } from 'src/app/assets/data/items';
 @Injectable({
   providedIn: 'root'
 })
+
 export class OrdersService {
 
   orders: Order[] = Orders;
@@ -32,7 +33,7 @@ export class OrdersService {
   }
 
   deleteOrder(id: any): any {
-    console.log(`orders.service.deleteOrder for ${id}`);
+    console.log(`deleted order ${id}`);
     const index = this.orders.map(order => {
       return order.id;
     }).indexOf(id);
