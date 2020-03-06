@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LocationPage } from './location.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
-import { LocationDetailComponent } from './location-detail/location-detail.component';
 
 @NgModule({
   imports: [
@@ -15,7 +14,7 @@ import { LocationDetailComponent } from './location-detail/location-detail.compo
     ExploreContainerComponentModule,
     RouterModule.forChild([{ path: '', component: LocationPage }])
   ],
-  declarations: [LocationPage, LocationDetailComponent]
+  declarations: [LocationPage]
 })
 
 export class LocationPageModule {
