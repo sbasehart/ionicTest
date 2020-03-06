@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+import { CustomDate } from './custom-date';
 
 export class Location {
     id: number
@@ -13,14 +14,14 @@ export class Location {
     phone2: string;
     contact: string;
     email: string;
-    addedDate: Date;
-    removedDate: Date;
+    addedDate?: CustomDate;
+    removedDate?: CustomDate;
     notes: string;
     active: boolean;
 
-    constructor(addedDate: Date) {
+    constructor(addedDate?: CustomDate) {
         if ( _.isEmpty(addedDate) ) {
-            this.addedDate = new Date(Date.now())
+            this.addedDate = new CustomDate
         } else {
             this.addedDate = addedDate;
         }

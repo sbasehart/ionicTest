@@ -1,3 +1,5 @@
+import { CustomDate } from './custom-date';
+
 export class Item {
     id: number;
     routeId: string;
@@ -7,7 +9,7 @@ export class Item {
     itemClaimIds: string[];
     itemClaims: any[];
     route: any;
-    deliverDate: Date;
+    deliverDate?: CustomDate;
     teamReferenceId: string;
     routeName: string;
     vendorName: string;
@@ -42,7 +44,7 @@ export class Item {
     stopRate: number;
     stopMileagePremium: number;
     updatedBy: string;
-    updateDate: Date;
+    updateDate: CustomDate;
     accountName: string;
     isBillable: boolean;
 }

@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 import { Locations }  from '../../assets/data/locations'
+import { CustomDate } from './custom-date';
 
 export class Client {
 
@@ -13,14 +14,14 @@ export class Client {
     phone1: string;
     phone2: string;
     email: string;
-    joinedDate: Date;
-    leftDate: Date;
+    joinedDate: CustomDate;
+    leftDate: CustomDate;
     notes: string;
     locations: any[];
 
-    constructor(joinedDate: Date) {
+    constructor(joinedDate?: CustomDate) {
         if ( _.isEmpty(joinedDate) ) {
-            this.joinedDate = new Date(Date.now())
+            this.joinedDate = new CustomDate
         } else {
             this.joinedDate = joinedDate;
         }

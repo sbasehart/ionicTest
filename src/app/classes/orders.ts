@@ -1,5 +1,6 @@
 import * as _ from 'lodash'
 import { Item } from './items';
+import { CustomDate } from './custom-date';
 
 export class Order {
     id: number
@@ -8,10 +9,10 @@ export class Order {
     status: string;
     soNumber: number;
     itemCount: number;
-    items: any[];
-    orderDate: Date;
-    pickupDate: Date;
-    deliverDate: Date;
+    items: Array<Item>;
+    orderDate?: CustomDate;
+    pickupDate?: CustomDate;
+    deliverDate?: CustomDate;
     orderAmount: number;
     receiptImageLocation: string;
     receiptNotes: string;
@@ -21,9 +22,9 @@ export class Order {
     isPickedUp: boolean;
     isDelivered: boolean;
 
-    constructor(orderDate: Date) {
+    constructor(orderDate?: CustomDate) {
         if ( _.isEmpty(orderDate) ) {
-            this.orderDate = new Date(Date.now())
+            this.orderDate = new CustomDate()
         } else {
             this.orderDate = orderDate;
         }

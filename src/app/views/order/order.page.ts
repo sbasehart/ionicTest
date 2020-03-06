@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrdersService } from '../../services/data/orders.service';
 import { Order } from 'src/app/classes/orders';
+import { CustomDate } from 'src/app/classes/custom-date';
 import * as _ from 'lodash';
 
 @Component({
@@ -11,49 +12,53 @@ import * as _ from 'lodash';
 })
 
 export class OrderPage implements OnInit {
-  orderId: number;
-  order: Order;
-  orderDate: Date;
-  isEdit: boolean;
 
-  constructor(
-    public activatedRoute: ActivatedRoute,
-    private ordersService: OrdersService,
-    private router: Router
-  ) {}
+orderId: number;
+order: Order;
+isEdit: boolean;
 
-  ionViewWillEnter() {
-    this.orderId = this.activatedRoute.snapshot.params['id'];
-    if ( _.isUndefined(this.orderId)) {
-      this.isEdit = true;
-      this.order = new Order(this.orderDate);
-    } else {
-      this.order = this.ordersService.getOrder(this.orderId);
-    }
-  }
+constructor(
+  private route: ActivatedRoute,
+  private ordersService: OrdersService,
+  private router: Router
+) {
+  	this.orderId = route.snapshot.params['id'];
+}
 
-  ionViewWillLeave() {
-    this.order = undefined;
-    this.orderId = undefined;
-  }
+ionViewWillEnter() {
+	if ( _.isUndefined(this.orderId)) {
+		// new order is created
+		this.isEdit = true;
+		this.order = new Order();
+	} else {
+		this.order = this.ordersService.getOrder(this.orderId);
+	}
+}
 
-  ngOnInit() { 
-  }
+ionViewWillLeave() {
+	// reset page properties for proper init/enter conditions
+	this.order = undefined;
+	this.orderId = undefined;
+}
 
+ngOnInit() {
 
-  saveOrder(value: Order) {
-    if ( _.isEmpty(this.orderId) ) { 
-      this.ordersService.createOrder(value);
-    }
-    this.router.navigate(['/tabs/order']);
-  }
+}
 
-  editOrder() {
-    this.isEdit = true;
-  }
+saveOrder(value: Order) {
+	if ( _.isEmpty(this.orderId) ) {
+		this.ordersService.createOrder(value);
+	}
+	this.router.navigate(['/tabs/order']);
+}
 
-  deleteOrder(value: Order) {
-    this.ordersService.deleteOrder(value.id);
-    this.router.navigate(['/tabs/order']);
-  }
+editOrder() {
+	this.isEdit = true;
+}
+
+deleteOrder(value: Order) {
+	this.ordersService.deleteOrder(value.id);
+	this.router.navigate(['/tabs/order']);
+}
+
 }

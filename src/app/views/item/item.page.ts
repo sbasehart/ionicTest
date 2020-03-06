@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ItemsService } from '../../services/data/items.service';
 import { Item } from 'src/app/classes/items';
+import { CustomDate } from 'src/app/classes/custom-date';
 import * as _ from 'lodash';
 
 @Component({
@@ -10,49 +11,54 @@ import * as _ from 'lodash';
   styleUrls: ['./item.page.scss'],
 })
 
-
 export class ItemPage implements OnInit {
 
-  itemId: number;
-  item: Item;
-  isEdit: boolean;
+itemId: number;
+item: Item;
+isEdit: boolean;
 
-  constructor(
-    public activatedRoute: ActivatedRoute,
-    private itemsService: ItemsService,
-    private router: Router
-  ) {}
+constructor(
+  private route: ActivatedRoute,
+  private itemsService: ItemsService,
+  private router: Router
+) {
+  	this.itemId = route.snapshot.params['id'];
+}
 
-  ionViewWillEnter() {
-    this.itemId = this.activatedRoute.snapshot.params['id'];
-    if ( _.isUndefined(this.itemId)) {
-      this.isEdit = true;
-      this.item = new Item();
-    } else {
-      this.item = this.itemsService.getItem(this.itemId);
-    }
-  }
+ionViewWillEnter() {
+	if ( _.isUndefined(this.itemId)) {
+		// new item is created
+		this.isEdit = true;
+		this.item = new Item();
+	} else {
+		this.item = this.itemsService.getItem(this.itemId);
+	}
+}
 
-  ionViewWillLeave() {
-    this.item = undefined;
-    this.itemId = undefined;
-  }
+ionViewWillLeave() {
+	// reset page properties for proper init/enter conditions
+	this.item = undefined;
+	this.itemId = undefined;
+}
 
-  ngOnInit() { }
+ngOnInit() {
 
-  saveItem(value: Item) {
-    if ( _.isEmpty(this.itemId) ) { 
-      this.itemsService.createItem(value);
-    }
-    this.router.navigate(['/tabs/item']);
-  }
+}
 
-  editItem(value: Item) {
-    this.isEdit = true;
-  }
+saveItem(value: Item) {
+	if ( _.isEmpty(this.itemId) ) {
+		this.itemsService.createItem(value);
+	}
+	this.router.navigate(['/tabs/item']);
+}
 
-  deleteItem(value: Item) {
-    this.itemsService.deleteItem(value.id);
-    this.router.navigate(['/tabs/item']);
-  }
+editItem() {
+	this.isEdit = true;
+}
+
+deleteItem(value: Item) {
+	this.itemsService.deleteItem(value.id);
+	this.router.navigate(['/tabs/item']);
+}
+
 }

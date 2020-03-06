@@ -15,7 +15,7 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../location/location.module').then(m => m.LocationPageModule),
-              canActivate: [AuthGuard]
+            canActivate: [AuthGuard]
           },
         ]
       },
@@ -26,7 +26,7 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../orders/orders.module').then(m => m.OrdersPageModule),
-              canActivate: [AuthGuard]
+            canActivate: [AuthGuard]
           }
         ]
       },
@@ -37,7 +37,7 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../items/items.module').then(m => m.ItemsPageModule),
-              canActivate: [AuthGuard]
+            canActivate: [AuthGuard]
           }
         ]
       },
@@ -48,7 +48,7 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../profile/profile.module').then(m => m.ProfilePageModule),
-              canActivate: [AuthGuard]
+            canActivate: [AuthGuard]
           }
         ]
       },
@@ -65,19 +65,76 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'order/:id',
+    path: 'location/:id',
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('../views/location/location.module').then(m => m.LocationPageModule),
+          canActivate: [AuthGuard]
+      }
+    ]
+  },
+  {
+    path: 'new-location',
     children: [
     {
       path: '',
       loadChildren: () =>
-  import('../views/order/order.module').then(m =>   m.OrderPageModule)
+    import('../views/location/location.module').then(m => m.LocationPageModule),
+    canActivate: [AuthGuard]
     }
     ]
+    },
+  {
+    path: 'item/:id',
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('../views/item/item.module').then(m => m.ItemPageModule),
+          canActivate: [AuthGuard]
+      }
+    ]
   },
+  {
+    path: 'new-item',
+    children: [
+    {
+      path: '',
+      loadChildren: () =>
+    import('../views/item/item.module').then(m => m.ItemPageModule),
+    canActivate: [AuthGuard]
+    }
+    ]
+    },
+  {
+    path: 'order/:id',
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('../views/order/order.module').then(m => m.OrderPageModule),
+          canActivate: [AuthGuard]
+      }
+    ]
+  },
+  {
+    path: 'new-order',
+    children: [
+    {
+      path: '',
+      loadChildren: () =>
+    import('../views/order/order.module').then(m => m.OrderPageModule),
+    canActivate: [AuthGuard]
+    }
+    ]
+    },
+
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }
