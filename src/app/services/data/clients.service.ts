@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Client } from '../../classes/clients';
-import { Clients } from '../../assets/data/clients';
+import { Clients } from '../../../assets/data/clients';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +36,7 @@ export class ClientsService {
     }).indexOf(id);
     this.clients.splice(index, 1);
   }
-  
+
   nextClientId(): number {
     const maxClientId = this.clients.reduce((max, client) => (client.id > max) ? client.id : max, this.clients[0].id);
     const newClientId = (maxClientId + 1);

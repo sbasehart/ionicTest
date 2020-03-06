@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { Locations }  from '../assets/data/locations'
+import { Locations }  from '../../assets/data/locations'
 
 export class Client {
 
