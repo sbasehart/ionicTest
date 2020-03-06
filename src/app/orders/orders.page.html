@@ -8,7 +8,7 @@
 
 <ion-content>
   <ion-list lines="none">
-    <ion-item routerLink="/order/{{ order.id }}" routerDirection="forward" class="orders" *ngFor="let order of orders">
+    <ion-item routerLink="/order/{{ order.id }}" routerDirection="forward" class="orders" *ngFor="let order of orders; let i = index">
       <ion-grid >
         <ion-col size="11">
           <ion-row class="header">
@@ -53,7 +53,7 @@
           <ion-col>
             {{order.itemCount}}
           </ion-col>
-          <ion-col href='tabs/location'>
+          <ion-col>
             {{order.clientLocationId}}
           </ion-col>
          </ion-row>

@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ItemPageRoutingModule } from './item-routing.module';
 import { ItemPage } from './item.page';
-import { ItemDetailComponent } from '../../items/item-detail/item-detail.component';
+import { ItemDetailComponent } from '../../components/item-detail/item-detail.component';
 
 @NgModule({
   declarations: [

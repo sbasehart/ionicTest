@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { OrderPageRoutingModule } from './order-routing.module';
 import { OrderPage } from './order.page';
-import { OrderDetailComponent } from '../../orders/order-detail/order-detail.component';
+import { OrderDetailComponent } from '../../components/order-detail/order-detail.component';
 @NgModule({
   declarations: [
     OrderPage,

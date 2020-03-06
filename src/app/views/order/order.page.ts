@@ -48,7 +48,7 @@ export class OrderPage implements OnInit {
     this.router.navigate(['/tabs/order']);
   }
 
-  editOrder(value: Order) {
+  editOrder() {
     this.isEdit = true;
   }
 
