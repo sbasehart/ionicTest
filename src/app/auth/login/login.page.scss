@@ -1,6 +1,59 @@
-ion-label {
-    widows: 100%;
+
+ion-list {
+    min-height: fit-content;
+}
+
+.logo-row {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+   
+.login-box {
+    padding: 20px 20px 0px 20px;
+    margin: 30px auto;
+    max-width:100%
+}
+   
+ion-row {
+    align-items: center;
     text-align: center;
-    color: lavender;
-    text-shadow: lightpink;
+    background-color: lavender !important;
+}
+
+img {
+    max-width: 100%;
+    border: 0;
+    min-width: 350px;
+    border-radius: 25px;
+}
+   
+ion-item {
+    border-radius: 30px !important;
+    padding-left: 30px !important;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    border: 1px solid #ffffff;
+    border-bottom: 0px !important;
+    box-shadow: none !important;
+}
+   
+.signup-col {
+    margin: 0px 16px 0px 16px;
+    padding-bottom: 20px;
+}
+   
+.item-inner {
+    border-bottom-color: #ffffff !important;
+    box-shadow: none !important;
+}
+   
+.submit-btn {
+    background: #51CFB1;
+    border-radius: 30px !important;
+    border: 1px solid #ffffff;
+}
+   
+.register-btn {
+    color: #ffffff;
+    font-size: 0.8em;
 }

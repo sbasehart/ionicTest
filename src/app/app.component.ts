@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  navigate : any;
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,

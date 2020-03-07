@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Client } from '../classes/clients';
 import { ClientsService } from '../services/data/clients.service';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-settings',
@@ -9,12 +10,14 @@ import { ClientsService } from '../services/data/clients.service';
 })
 export class SettingsPage implements OnInit {
 
-  clients: Client[] = []
+  // clients: Client[] = []
+  // userId = null;
 
-  constructor(private clientService: ClientsService) { }
+  constructor(private clientService: ClientsService, private storage: Storage) { }
 
-  ngOnInit() {
-    this.clients = this.clientService.getClients()
+  async ngOnInit() {
+  //   this.clients = this.clientService.getClients()
+  //   this.userId = this.route.snapshot.params.id || await this.storage.get("USER_ID");;
   }
 
 }

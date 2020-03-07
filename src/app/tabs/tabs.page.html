@@ -1,32 +1,36 @@
-<ion-tabs>
+<ion-tabs main>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        OST On Demand
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-  
-  <ion-tabs main>
-    <ion-header no-border>
-      <ion-toolbar></ion-toolbar>
-    </ion-header>
 
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="location">
-        <ion-icon name="pin-outline"></ion-icon>
-        <ion-label>Locations</ion-label>
-      </ion-tab-button>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="location">
+      <ion-icon name="pin-outline"></ion-icon>
+      <ion-label>Locations</ion-label>
+    </ion-tab-button>
 
-      <ion-tab-button tab="orders">
-        <ion-icon name="cart-outline"></ion-icon>
-        <ion-label>Orders</ion-label>
-      </ion-tab-button>
+    <ion-tab-button tab="orders">
+      <ion-icon name="cart-outline"></ion-icon>
+      <ion-label>Orders</ion-label>
+    </ion-tab-button>
 
-      <ion-tab-button tab="items">
-        <ion-icon name="cash-outline"></ion-icon>
-        <ion-label>Items</ion-label>
-      </ion-tab-button>
+    <ion-tab-button tab="items">
+      <ion-icon name="cash-outline"></ion-icon>
+      <ion-label>Items</ion-label>
+    </ion-tab-button>
 
-      <ion-tab-button tab="profile">
-        <ion-icon name="people-circle-outline"></ion-icon>
-        <ion-label>Profile</ion-label>
-      </ion-tab-button>
+    <ion-tab-button tab="profile">
+      <ion-icon name="people-circle-outline"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
 
-    </ion-tab-bar>
-
-  </ion-tabs>
+  </ion-tab-bar>
+</ion-tabs>

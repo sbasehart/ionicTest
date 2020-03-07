@@ -16,6 +16,8 @@ import { SettingsPage } from './settings.page';
     SettingsPageRoutingModule
   ],
   declarations: [SettingsPage],
-  exports: [SettingsPage]
 })
-export class SettingsPageModule {}
+export class SettingsPageModule {
+
+
+}

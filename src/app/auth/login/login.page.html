@@ -1,29 +1,26 @@
-<ion-header no-border>
-  <ion-toolbar mode="ios">
-    <ion-title>Login</ion-title>
-    <ion-buttons slot="start">
-      <ion-button (click)="goHome()">
-        <ion-icon slot="icon-only" name="close"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-<ion-content padding>
-  <ion-grid>
-    <ion-row justify-content-center>
-      <ion-col align-self-center>
-        <ion-item>
-          <ion-label stacked>E-mail</ion-label>
-          <ion-input [(ngModel)]="email" placeholder="email@example.com"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label stacked>Password</ion-label>
-          <ion-input type="password" [(ngModel)]="password" placeholder="password"></ion-input>
-        </ion-item>
-        <ion-button (click)="login()" expand="block">
+<ion-list class="login-content" padding>
+  <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-67>
+      <img src="assets/imgs/OSTLogoLarge.png" />
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <ion-row>
+    <form (ngSubmit)="login()" #registerForm="ngForm" class="login-box">
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-input [(ngModel)]="email" name="email" placeholder="email@example.com"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="password" name="password" [(ngModel)]="password" placeholder="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-button [disabled]="!registerForm.form.valid" (click)="login()" expand="block">
         Login
-        </ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content>
+      </ion-button>
+    </form>
+  </ion-row>
+</ion-list>

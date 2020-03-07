@@ -1,4 +1,5 @@
 import { Client } from 'src/app/classes/clients';
+import { Locations } from './locations';
 
 export const Clients: Client[] = [
     {
@@ -15,6 +16,6 @@ export const Clients: Client[] = [
         joinedDate: null,
         leftDate: null,
         notes: "Notes go here",
-        locations: Location[this.locationService.getLocationsByClient()],
+        locations: Locations,
     }
 ]
