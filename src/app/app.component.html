@@ -2,7 +2,7 @@
 
   <ion-menu side="start" menuId="first" contentId="content1">
     <ion-header>
-      <ion-toolbar>
+      <ion-toolbar [color]="dynamicColor? dynamicColor:'primary'">
         <ion-title>Navigate</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -22,7 +22,7 @@
 
   <!-- <ion-menu side="start" type="overlay" menuId="mainMenu" class="main-menu">
     <ion-header>
-      <ion-toolbar>
+      <ion-toolbar [color]="dynamicColor? dynamicColor:'primary'">
         <ion-title>Main Menu</ion-title>
       </ion-toolbar>
     </ion-header>

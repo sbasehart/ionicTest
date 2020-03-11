@@ -8,6 +8,8 @@
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
 @import '~@ionic/angular/css/display.css';
+@import './theme/animations.scss';
+@import "./theme/variables.scss";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -16,13 +18,10 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-body {
-    background-color: lavender
-}
+
 
 ion-list{
     min-height: 100vh;
-    background-color: lavender
 }
 
 ion-row {
@@ -31,13 +30,27 @@ ion-row {
     align-content: center;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity:0
-
-    }
-
-    100% {
-        opacity : 1
-    }
+ion-card, ion-list {
+    animation: cardAnimation 1.3s ease-in;
 }
+
+ion-title {
+    animation: moveInRight 1.5s ease-in;
+    text-transform: capitalize;
+}
+
+ion-button {
+    animation: fadeIn 2s ease-in !important
+}
+
+ion-slides {
+    overflow: scroll;
+    --scroll-bar-background: primary
+}
+
+.header-icon {
+    animation: moveInLeft 1.7s ease-in;
+    margin-right: 10px;
+}
+
+
