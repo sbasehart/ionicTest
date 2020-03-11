@@ -7,9 +7,11 @@
 </ion-header>
 
 <ion-content>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="tabs/items" text="" icon="arrow-back-outline"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
   <app-item-detail [item]="item" [isEdit]="isEdit" (saveItemEvent)="saveItem($event)" (editItemEvent)="editItem($event)"
     (deleteItemEvent)="deleteItem($event)"></app-item-detail>
-  <ion-list lines="none">
-    <ion-card href="tabs/items"></ion-card>
-  </ion-list>
 </ion-content>

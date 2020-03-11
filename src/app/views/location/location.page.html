@@ -1,18 +1,24 @@
-<ion-header no-border>
-  <ion-toolbar mode="ios">
+<ion-header>
+  <ion-toolbar [color]="dynamicColor? dynamicColor:'primary'">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>
-      View Location
+      Location Details
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
-  <app-location-detail 
-
-    ></app-location-detail>
-  <ion-list lines="none">
-      <ion-card href="tabs/location"></ion-card>
-  </ion-list>
+    <ion-toolbar>
+      <ion-buttons>
+        <ion-back-button defaultHref="tabs/location" text="" icon="arrow-back-outline"></ion-back-button>
+      </ion-buttons>
+      <ion-title *ngIf="location">
+        Location: {{location.id}}
+      </ion-title>
+    </ion-toolbar>
+  <app-location-detail [location]="location" [isEdit]="isEdit" (saveLocationEvent)="saveLocation($event)"
+    (editLocationEvent)="editLocation($event)" (deleteLocationEvent)="deleteLocation($event)">
+  </app-location-detail>
 </ion-content>
-
-<!-- [location]="location" [isEdit]="isEdit" (saveLocationEvent)="saveLocation($event)"
-(editLocationEvent)="editLocation($event)" (deleteLocationEvent)="deleteLocation($event)" -->

@@ -17,4 +17,6 @@ export class OrdersPage implements OnInit {
   ngOnInit() {
     this.orders = this.ordersService.getOrders()
   }
+
+
 }

@@ -1,26 +1,50 @@
+ion-content ion-toolbar {
+  --background: translucent;
+}
 
-  ion-content ion-toolbar {
-    --background: translucent;
-  }
-  
-  ion-item {
-    margin: 5px auto;
-    max-width: 95%;
-    box-shadow: 2px 3px 5px grey;
-    animation: fadeIn 2s ease-out;
-    border-radius: 25px;
-  }
-  
-  ion-row {
-    border-bottom: 1px gray solid;
-  }
-  
-  .header {
-    font-weight: bold;
-    font-size: small;
-    color: rbga(180,180,180,1)
-  }
-  
-  .content {
-    font-size: smaller;
-  }
+.products {
+  width:100% !important;
+  align-items: normal;
+}
+
+ion-col {
+  margin: 0 auto
+}
+
+ion-item {
+  margin: 5px auto;
+  max-width: 95%;
+  box-shadow: 2px 3px 5px grey;
+  animation: fadeIn 2s ease-out;
+  border-radius: 25px;
+}
+
+ion-item ion-img {
+  transition: transform .5s ease;
+}
+
+ion-item:hover  ion-img {
+  transform: scale(1.5);
+  overflow: scroll
+}
+
+.image-wrapper {
+  min-width: 300px;
+  max-width: 50%;
+}
+
+p {
+  margin: 12px auto;
+  padding: 0;
+}
+
+ion-input {
+  text-align: center;
+  margin: 5px;
+  font-size: small;
+}
+
+ion-checkbox {
+  margin: 0px auto;
+  width: 100%;
+}

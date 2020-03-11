@@ -8,7 +8,7 @@
 
 <ion-content>
   <ion-list lines="none">
-    <ion-item *ngFor="let item of items">
+    <ion-item routerLink="/item/{{ item.id }}" routerDirection="forward" class="items"  *ngFor="let item of items">
       <ion-grid>
           <ion-col class="id" size="12">
               <h5>Item: {{item.id}}</h5>
@@ -196,31 +196,6 @@
         </ion-row>
 
         <br>
-        
-        <ion-row class="header">
-
-          <ion-col>
-            Deliver Date
-          </ion-col>
-          <ion-col>
-            Refusal Reason(s)
-          </ion-col>
-          <ion-col>
-            Rated Value
-          </ion-col>
-        </ion-row>
-        <ion-row class="content">
-
-          <ion-col>
-            {{item.deliverDate}}
-          </ion-col>
-          <ion-col>
-            {{item.refusalReason}}
-          </ion-col>
-          <ion-col>
-            {{item.ratedValue}}
-          </ion-col>
-        </ion-row>
 
         <br>
         <ion-row class="header">

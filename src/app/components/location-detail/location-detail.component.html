@@ -1,4 +1,123 @@
-<ion-content>
+<div *ngIf="location">
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button *ngIf="!isEdit">
+      <ion-icon name="create" (click)="editLocation()"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button *ngIf="isEdit">
+      <ion-icon name="save-outline" (click)="saveLocation()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <form>
+    <ion-list>
+      <ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-row>
+              <ion-item>
+                <ion-label position="stacked">Active:</ion-label> <br>
+                <ion-checkbox required [(ngModel)]="location.active" [disabled]="!isEdit" name="active"> </ion-checkbox>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Number:</ion-label>
+                <ion-input required type="text" [(ngModel)]="location.storeNumber" [disabled]="!isEdit"
+                  name="storeNumber">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Name:</ion-label>
+                <ion-input required type="text" [(ngModel)]="location.name" [disabled]="!isEdit" name="name">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Address Line 1:</ion-label>
+                <ion-input required type="text" [(ngModel)]="location.address1" [disabled]="!isEdit" name="address1">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Address Line 2:</ion-label>
+                <ion-input required type="text" [(ngModel)]="location.address2" [disabled]="!isEdit" name="address2">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">City:</ion-label>
+                <ion-input required type="text" [(ngModel)]="location.city" [disabled]="!isEdit" name="city">
+                </ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="stacked">State:</ion-label>
+                <ion-input required type="text" [(ngModel)]="location.state" [disabled]="!isEdit" name="state">
+                </ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="stacked">Zip Code:</ion-label>
+                <ion-input required type="number" [(ngModel)]="location.zip" [disabled]="!isEdit" name="zip">
+                </ion-input>
+              </ion-item>
+
+
+              <ion-item>
+                <ion-label position="stacked">Phone:</ion-label>
+                <ion-input required type="text" [(ngModel)]="location.phone1" [disabled]="!isEdit" name="phone1">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked"> Alt Phone:</ion-label>
+                <ion-input required type="text" [(ngModel)]="location.phone2" [disabled]="!isEdit" name="phone2">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Email:</ion-label>
+                <ion-input required type="email" [(ngModel)]="location.email" [disabled]="!isEdit" name="namemaile">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Contact:</ion-label>
+                <ion-input required type="text" [(ngModel)]="location.contact" [disabled]="!isEdit" name="contact">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Added:
+                </ion-label>
+                <ion-input required type="text"
+                  value="{{ location.addedDate.monthName + ' ' + location.addedDate.day + ', ' + location.addedDate.year }}"
+                  [disabled]="!isEdit" name="addedDate"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Removed:
+                </ion-label>
+                <ion-input required type="text"
+                  value="{{ location.removedDate.monthName + ' ' + location.removedDate.day + ', ' + location.removedDate.year }}"
+                  [disabled]="!isEdit" name="removedDate"></ion-input>
+              </ion-item>
+
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-row>
+
+    </ion-list>
+  </form>
+  <ion-fab-button *ngIf="!isEdit">
+    <ion-icon name="trash" (click)="deleteLocation()"></ion-icon>
+  </ion-fab-button>
+</div>
+
+
+
+
+<!-- <ion-content>
   <ion-list lines="none">
     <ion-item class="locations" *ngIf="location">
 
@@ -31,4 +150,4 @@
       </ion-grid>
     </ion-item>
   </ion-list>
-</ion-content>
+</ion-content> -->

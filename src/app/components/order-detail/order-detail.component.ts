@@ -23,6 +23,7 @@ export class OrderDetailComponent {
       return false;
     }
     this.saveOrderEvent.emit(this.order);
+    
   }
 
   editOrder() {
