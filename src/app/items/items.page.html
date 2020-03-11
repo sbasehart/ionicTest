@@ -9,7 +9,7 @@
 <ion-content>
   <ion-list lines="none">
     <ion-item routerLink="/item/{{ item.id }}" routerDirection="forward" class="items"  *ngFor="let item of items">
-      <ion-grid>
+      <ion-grid [ngClass]="item.isBillable ? 'completed' : 'pending' ">
           <ion-col class="id" size="12">
               <ion-label color="primary">Item: {{item.id}}</ion-label>
           </ion-col>
