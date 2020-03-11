@@ -113,29 +113,33 @@
 
       </ion-row>
       <ion-row >
-        <ion-item *ngFor="let item of order.items" class="products">
-          <ion-row class="products">
+        
+        <ion-item>
+          <h5>Items:</h5>
+          <ion-row class="products" *ngFor="let item of order.items" class="products">
+            <ion-col  size="12">
+            </ion-col>
 
-            <ion-col>
-              <ion-label position="stacked">Item SKU</ion-label>
+            <ion-col  size="3">
+              <ion-label position="stacked">SKU</ion-label>
               <ion-input required type="text" [(ngModel)]="item.itemSku" [disabled]="!isEdit" name="itemSku">
               </ion-input>
             </ion-col>
 
-            <ion-col size ="6">
-              <ion-label position="stacked">Item Name and Desc</ion-label>
+            <ion-col size ="5">
+              <ion-label position="stacked">Name and Desc</ion-label>
               <ion-input required type="text" [(ngModel)]="item.itemDesc1" [disabled]="!isEdit" name="itemDesc1"></ion-input>
               <ion-input required type="text" [(ngModel)]="item.itemDesc2" [disabled]="!isEdit" name="itemDesc2"></ion-input>
             </ion-col>
 
-            <ion-col size="3">
-              <ion-label position="stacked">Unit Price</ion-label>
+            <ion-col size="2">
+              <ion-label position="stacked">Price</ion-label>
               <ion-input required type="number" [(ngModel)]="item.price" [disabled]="!isEdit" name="price">
               </ion-input>
             </ion-col>
 
             <ion-col size="2">
-              <ion-label position="stacked">Item QTY</ion-label>
+              <ion-label position="stacked">QTY</ion-label>
               <ion-input required type="number" [(ngModel)]="item.orderQty" [disabled]="!isEdit" name="orderQty">
               </ion-input>
             </ion-col>

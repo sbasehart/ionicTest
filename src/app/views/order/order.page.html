@@ -10,6 +10,11 @@
 </ion-header>
 
 <ion-content>
+    <ion-toolbar>
+      <ion-buttons>
+        <ion-back-button defaultHref="tabs/orders" text="" icon="arrow-back-outline"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
   <app-order-detail [order]="order" [isEdit]="isEdit" (saveOrderEvent)="saveOrder($event)"
     (editOrderEvent)="editOrder($event)" (deleteOrderEvent)="deleteOrder($event)"></app-order-detail>
 </ion-content>
