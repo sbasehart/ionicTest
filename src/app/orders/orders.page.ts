@@ -12,6 +12,7 @@ export class OrdersPage implements OnInit {
 
   orders: Order[] = [];
   public toggled: boolean = false;
+  term = ''
 
   constructor(private ordersService: OrdersService) {
     this.toggled = false;

@@ -12,6 +12,7 @@ export class LocationPage implements OnInit {
 
   locations: Location[] = [];
   public toggled: boolean = false;
+  term = ''
 
   constructor(private locationsService: LocationsService) {
     this.toggled = false;

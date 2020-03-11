@@ -14,7 +14,7 @@ export class ItemsPage implements OnInit {
 
   items: Item[] = [] 
   public toggled: boolean = false;
-
+  term = ''
 
   constructor(private itemsService: ItemsService) {
     this.toggled = false;

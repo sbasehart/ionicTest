@@ -1,7 +1,10 @@
-<ion-header no-border>
-  <ion-toolbar mode="ios">
+<ion-header>
+  <ion-toolbar [color]="dynamicColor? dynamicColor:'primary'">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>
-      View Item
+      Item Details
     </ion-title>
   </ion-toolbar>
 </ion-header>

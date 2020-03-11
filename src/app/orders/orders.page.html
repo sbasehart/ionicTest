@@ -3,7 +3,7 @@
     <ion-title>
       Orders
       </ion-title>
-      <ion-icon slot="end" *ngIf="!toggled" (click)="toggle()" name="search"></ion-icon>
+      <ion-icon slot="end" [(ngModel)]="term" *ngIf="!toggled" (click)="toggle()" name="search"></ion-icon>
   </ion-toolbar>
   <ion-toolbar *ngIf="toggled">
     <ion-searchbar [(ngModel)]="term" (ionInput)="searchThis($event)" (ionCancel)="cancelSearch($event)"
@@ -15,7 +15,7 @@
 <ion-content>
   <ion-list lines="none">
     <ion-item routerLink="/order/{{ order.id }}" routerDirection="forward" class="orders"
-      *ngFor="let order of orders; let i = index">
+      *ngFor="let order of orders | orderSearch: term">
       <ion-grid [ngClass]="order.isDelivered ? 'completed' : 'pending' ">
         <ion-row>
           <ion-col class="id">

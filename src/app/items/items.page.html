@@ -3,7 +3,7 @@
     <ion-title>
       Items
     </ion-title>
-    <ion-icon slot="end" *ngIf="!toggled" (click)="toggle()" name="search"></ion-icon>
+    <ion-icon slot="end" [(ngModel)]="term" *ngIf="!toggled" (click)="toggle()" name="search"></ion-icon>
   </ion-toolbar>
   <ion-toolbar *ngIf="toggled">
     <ion-searchbar
@@ -18,7 +18,7 @@
 
 <ion-content>
   <ion-list lines="none">
-    <ion-item routerLink="/item/{{ item.id }}" routerDirection="forward" class="items"  *ngFor="let item of items">
+    <ion-item routerLink="/item/{{ item.id }}" routerDirection="forward" class="items"  *ngFor="let item of items | itemSearch: term">
       <ion-grid [ngClass]="item.isBillable ? 'completed' : 'pending' ">
           <ion-col class="id" size="12">
               <ion-label color="primary">Item: {{item.id}}</ion-label>

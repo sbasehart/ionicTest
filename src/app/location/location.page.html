@@ -3,7 +3,7 @@
     <ion-title>
       Locations
       </ion-title>
-      <ion-icon slot="end" *ngIf="!toggled" (click)="toggle()" name="search"></ion-icon>
+      <ion-icon slot="end" [(ngModel)]="term" *ngIf="!toggled" (click)="toggle()" name="search"></ion-icon>
   </ion-toolbar>
   <ion-toolbar *ngIf="toggled">
     <ion-searchbar [(ngModel)]="term" (ionInput)="searchThis($event)" (ionCancel)="cancelSearch($event)"
@@ -15,7 +15,7 @@
 <ion-content>
   <ion-list>
     <ion-item routerLink="/location/{{ loc.id }}" routerDirection="forward" class="locations"
-      *ngFor="let loc of locations">
+      *ngFor="let loc of locations | locationSearch: term">
       <ion-grid>
         <ion-label color="primary">{{ loc.name }} : {{loc.id}}</ion-label>
       </ion-grid>
