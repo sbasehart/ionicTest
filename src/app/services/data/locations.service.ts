@@ -27,9 +27,7 @@ export class LocationsService {
   }
   deleteLocation(id: any): any {
     console.log(`locations.service.deleteLocation for ${id}`);
-    const index = this.locations.map(location => {
-      return location.id;
-    }).indexOf(id);
+    const index = this.locations.indexOf(id);
     this.locations.splice(index, 1);
   }
   nextLocationId(): number {

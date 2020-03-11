@@ -30,9 +30,7 @@ export class ItemsService {
 
   deleteItem(id: any): any {
     console.log(`items.service.deleteItem for ${id}`);
-    const index = this.items.map(item => {
-      return item.id;
-    }).indexOf(id);
+    const index = this.items.indexOf(id);
     this.items.splice(index, 1);
   }
   

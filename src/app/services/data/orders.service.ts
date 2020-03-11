@@ -34,9 +34,7 @@ export class OrdersService {
 
   deleteOrder(id: any): any {
     console.log(`deleted order ${id}`);
-    const index = this.orders.map(order => {
-      return order.id;
-    }).indexOf(id);
+    const index = this.orders.indexOf(id);
     this.orders.splice(index, 1);
   }
 
