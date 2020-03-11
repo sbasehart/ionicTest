@@ -11,11 +11,20 @@ ion-item {
   border-radius: 25px;
 }
 
+ion-item-divider {
+  height: 5px !important
+}
+
 .header {
   font-weight: bold;
   font-size: small;
   color: rbga(180,180,180,1);
   border-bottom: 1px gray solid;
+}
+
+ion-label .name {
+  text-align:center;
+  margin: 5px auto;
 }
 
 .content {

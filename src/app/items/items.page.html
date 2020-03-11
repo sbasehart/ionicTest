@@ -11,7 +11,7 @@
     <ion-item routerLink="/item/{{ item.id }}" routerDirection="forward" class="items"  *ngFor="let item of items">
       <ion-grid>
           <ion-col class="id" size="12">
-              <h5>Item: {{item.id}}</h5>
+              <ion-label color="primary">Item: {{item.id}}</ion-label>
           </ion-col>
         <ion-row class="header">
           <ion-col>
@@ -94,6 +94,9 @@
           <ion-col>
             Item Type
           </ion-col>
+          <ion-col>
+            Item Status
+          </ion-col>
         </ion-row>
         <ion-row class="content">
           <ion-col>
@@ -105,116 +108,47 @@
           <ion-col>
             {{item.itemType}}
           </ion-col>
+          <ion-col>
+            {{item.itemStatus}}
+          </ion-col>
         </ion-row>
 
         <br>
 
         <ion-row class="header">
+          <ion-col>
+            Item Name
+          </ion-col>
           <ion-col>
             Item Desc
           </ion-col>
           <ion-col>
-            Price
-          </ion-col>
-          <ion-col>
-            Adjusted Price
-          </ion-col>
-        </ion-row>
-        <ion-row class="content">
-          <ion-col>
-            {{item.itemDesc1}} --
-            {{item.itemDesc2}}
-          </ion-col>
-          <ion-col>
-            {{item.price}}
-          </ion-col>
-          <ion-col>
-            {{item.adjustedPrice}}
-          </ion-col>
-        </ion-row>
-
-        <br>
-
-        <ion-row class="header">
-          <ion-col>
-            Item Status
-          </ion-col>
-          <ion-col>
             Order QTY
           </ion-col>
-          <ion-col>
-            Last Order QTY
-          </ion-col>
-          <ion-col>
-            Exception QTY
-          </ion-col>
         </ion-row>
         <ion-row class="content">
           <ion-col>
-            {{item.itemStatus}}
+            {{item.itemDesc1}} 
+          </ion-col>
+          <ion-col>
+            {{item.itemDesc2}}
           </ion-col>
           <ion-col>
             {{item.orderQty}}
           </ion-col>
-          <ion-col>
-            {{item.lastOrderQty}}
-          </ion-col>
-          <ion-col>
-            {{item.exceptionQty}}
-          </ion-col>
-        </ion-row>
 
-        <br>
-
-        <ion-row class="header">
-          <ion-col>
-            Even Exchange
-          </ion-col>
-          <ion-col>
-            Pickup Only
-          </ion-col>
-          <ion-col>
-            Active
-          </ion-col>
-          <ion-col>
-            Billable
-          </ion-col>
         </ion-row>
-        <ion-row class="content">
-          <ion-col>
-            <ion-checkbox [checked]="item.isEvenExchange"></ion-checkbox>
-          </ion-col>
-          <ion-col>
-            <ion-checkbox [checked]="item.isPickupOnly"></ion-checkbox>
-          </ion-col>
-          <ion-col>
-            <ion-checkbox [checked]="item.isActive"></ion-checkbox>
-          </ion-col>
-          <ion-col>
-            <ion-checkbox [checked]="item.isBillable"></ion-checkbox>
-          </ion-col>
-        </ion-row>
-
-        <br>
 
         <br>
         <ion-row class="header">
-          <ion-col>
             Notes
-          </ion-col>
         </ion-row>
         <ion-row class="content">
-          <ion-col>{{item.notes}}</ion-col>
+          {{item.notes}}
         </ion-row>
-
         <br>
-        <ion-row ion-row class="header">
-          <ion-col>
-            Last updated by {{item.updatedBy}} on {{item.updateDate}}
-          </ion-col>
-        </ion-row>
-
       </ion-grid>
+      <br>
     </ion-item>
   </ion-list>
 </ion-content>

@@ -10,18 +10,7 @@
   <ion-list>
     <ion-item routerLink="/location/{{ loc.id }}" routerDirection="forward" class="locations" *ngFor="let loc of locations">
       <ion-grid>
-        <ion-row class="header">
-          <ion-col><h5>Status</h5></ion-col>
-          <ion-col><h5>Store:</h5></ion-col>
-          <ion-col><h5>Location:</h5></ion-col>
-          <ion-col ><h5>Contact:</h5></ion-col>
-        </ion-row>
-        <ion-row class="content">
-          <ion-col><div>{{ loc.active ? 'Active' : 'Disabled' }}</div></ion-col>
-          <ion-col><div>{{ loc.storeNumber }}</div></ion-col>
-          <ion-col><div>{{ loc.name }}</div></ion-col>
-          <ion-col><div>{{ loc.phone1 }} <br> {{ loc.email }}</div></ion-col>
-        </ion-row>
+        <ion-label color="primary">{{ loc.name }} : {{loc.id}}</ion-label>
       </ion-grid>
     </ion-item>
   </ion-list>
