@@ -23,7 +23,7 @@
             </ion-card-title>
           <ion-card-content>
             <h2>
-              <ion-icon name="mail-outline"></ion-icon>&nbsp;&nbsp;{{user.email}}
+              Email: {{user.email}}
             </h2>
               <p>
               {{user.isAdmin ? "Admin Privileges" : "No Admin Priveleges"}}</p>
@@ -36,32 +36,11 @@
               </ion-label>
             </ion-card-title>
             <ion-card-content>
-              <ion-row>
-                <ion-col size="2">
-                  <p> <ion-icon name="home-outline"></ion-icon></p>
-                </ion-col>
-                <ion-col>
-                  <p>{{client.address1}}</p>
-                  <p>{{client.address2}}</p>
-                  <p>{{client.city}}, {{client.state}} {{client.zip}}</p>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col size="2">
-                  <p> <ion-icon name="mail-outline"></ion-icon></p>
-                </ion-col>
-                <ion-col>
-                  <p>{{client.email}}</p>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col size="2">
-                  <p><ion-icon name="call-outline"></ion-icon> </p>
-                </ion-col>
-                <ion-col>
-                  <p>{{client.phone1}} | {{client.phone2}} </p>
-                </ion-col>
-              </ion-row>
+              <h5>Address:</h5>
+              <p>{{client.address1}}, {{client.address2}}</p>
+              <p>{{client.city}}, {{client.state}} {{client.zip}}</p>
+              <p>{{client.email}}</p>
+              <p> {{client.phone1}} | {{client.phone2}} </p>
             </ion-card-content>
           </ion-card>
         </ion-col>
