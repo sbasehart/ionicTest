@@ -10,13 +10,26 @@ import { OrdersService } from '../services/data/orders.service';
 
 export class OrdersPage implements OnInit {
 
-  orders: Order[] = []
+  orders: Order[] = [];
+  public toggled: boolean = false;
 
-  constructor(private ordersService: OrdersService) {}
+  constructor(private ordersService: OrdersService) {
+    this.toggled = false;
+  }
   
   ngOnInit() {
-    this.orders = this.ordersService.getOrders()
+      this.orders = this.ordersService.getOrders().sort((a, b) => {
+        return <any>new Date(b.createdDate) - <any>new Date(a.createdDate);
+      });
   }
+
+  public toggle(): void {
+    this.toggled = !this.toggled;
+ }
+
+ cancelSearch() {
+  this.toggled = !this.toggled;
+ }
 
 
 }

@@ -2,7 +2,13 @@
   <ion-toolbar mode="ios">
     <ion-title>
       Orders
-    </ion-title>
+      </ion-title>
+      <ion-icon slot="end" *ngIf="!toggled" (click)="toggle()" name="search"></ion-icon>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="toggled">
+    <ion-searchbar [(ngModel)]="term" (ionInput)="searchThis($event)" (ionCancel)="cancelSearch($event)"
+      (ionClear)="cancelSearch($event)" [showCancelButton]="true">
+    </ion-searchbar>
   </ion-toolbar>
 </ion-header>
 

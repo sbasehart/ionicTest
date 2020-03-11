@@ -10,11 +10,23 @@ import { LocationsService } from '../services/data/locations.service';
 
 export class LocationPage implements OnInit {
 
-  locations: Location[] = []
+  locations: Location[] = [];
+  public toggled: boolean = false;
 
-  constructor(private locationsService: LocationsService) {}
+  constructor(private locationsService: LocationsService) {
+    this.toggled = false;
+
+  }
   
   ngOnInit() {
     this.locations = this.locationsService.getLocations()
   }
+
+  public toggle(): void {
+    this.toggled = !this.toggled;
+ }
+
+ cancelSearch() {
+  this.toggled = !this.toggled;
+}
 }

@@ -19,7 +19,7 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
     IonicModule.forRoot(), 
     AppRoutingModule,
     CurrencyMaskModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
   ],
   providers: [
     StatusBar,
@@ -30,5 +30,5 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
 })
 export class AppModule {
 
-  
+
 }
