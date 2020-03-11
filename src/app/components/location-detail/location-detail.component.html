@@ -15,7 +15,7 @@
         <ion-row>
           <ion-col>
             <ion-row>
-              <ion-item>
+              <ion-item [ngClass]="{hidden: location.active === false && !isEdit}">
                 <ion-label position="stacked">Active:</ion-label> <br>
                 <ion-checkbox required [(ngModel)]="location.active" [disabled]="!isEdit" name="active"> </ion-checkbox>
               </ion-item>
@@ -94,15 +94,19 @@
                   [disabled]="!isEdit" name="addedDate"></ion-input>
               </ion-item>
 
-              <ion-item>
-                <ion-label position="stacked">Removed:
+              <ion-item [ngClass]="{hidden: location.removedDate === null && !isEdit}">
+                <ion-label position="stacked" >Removed:
                 </ion-label>
                 <ion-input required type="text"
                   value="{{ location.removedDate.monthName + ' ' + location.removedDate.day + ', ' + location.removedDate.year }}"
                   [disabled]="!isEdit" name="removedDate"></ion-input>
               </ion-item>
-
             </ion-row>
+            <ion-item>
+              <ion-label position="stacked">Notes:</ion-label>
+              <ion-textarea required type="text" [(ngModel)]="location.notes" [disabled]="!isEdit" name="notes" rows="6">
+              </ion-textarea>
+            </ion-item>
           </ion-col>
         </ion-row>
       </ion-row>

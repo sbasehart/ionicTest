@@ -44,7 +44,11 @@ ion-input {
   font-size: small;
 }
 
-ion-checkbox {
+ion-checkbox, ion-textarea {
   margin: 0px auto;
   width: 100%;
+}
+
+.hidden {
+  display: none
 }
