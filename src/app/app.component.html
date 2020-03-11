@@ -1,4 +1,4 @@
-<ion-app>
+<ion-app >
 
   <ion-menu side="start" menuId="first" contentId="content1">
     <ion-header>
@@ -9,6 +9,13 @@
     <ion-content>
       <ion-list>
       <ion-menu-toggle auto-hide="true">
+        <ion-item lines="full">
+          <ion-icon slot="start" name="moon"></ion-icon>
+          <ion-label>
+            Dark Theme
+          </ion-label>
+          <ion-toggle id="themeToggle" slot="end" (click)="darkToggle()"></ion-toggle>
+        </ion-item>
         <ion-item href="" routerDirection="root">App Home</ion-item>
         <ion-item href="settings" routerDirection="root">Settings</ion-item>
         <ion-item href="tabs/profile" routerDirection="root">Profile</ion-item>

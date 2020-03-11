@@ -28,4 +28,7 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+
+  
+}

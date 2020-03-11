@@ -22,6 +22,9 @@ export class AppComponent {
     public menuCtrl: MenuController,
     public router: Router
   ) {
+    function loadApp() {
+      checkToggle(prefersDark.matches);
+    }
     this.initializeApp();
   }
 
@@ -29,6 +32,7 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.checkToggle(prefersDark.matches)
     });
   }
 
@@ -40,5 +44,28 @@ export class AppComponent {
   
   goHome() {
     this.router.navigateByUrl( 'login' );
+  }
+
+
+  darkToggle() {
+    // Use matchMedia to check the user preference
+    const toggle = document.querySelector('#themeToggle') as HTMLIonToggleElement;
+
+    // Listen for the toggle check/uncheck to toggle the dark class on the <body>
+    toggle.addEventListener('ionChange', (ev) => {
+      document.body.classList.toggle('dark', (<any>ev).detail.checked);
+    });
+
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+    // Listen for changes to the prefers-color-scheme media query
+    prefersDark.addListener((e) => checkToggle(e.matches));
+
+    // Called by the media query to check/uncheck the toggle
+    function checkToggle(shouldCheck) {
+      toggle.checked = shouldCheck;
+      this.storage.set('toggle', JSON.stringify(this.toggleOn));
+      this.storage.set('toggle', this.toggleOn);
+    }
   }
 }
