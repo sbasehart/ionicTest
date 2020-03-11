@@ -1,8 +1,8 @@
 <ion-list class="login-content" padding>
   <ion-row class="logo-row">
     <ion-col></ion-col>
-    <ion-col width-67>
-      <img src="assets/imgs/OSTLogoLarge.png" />
+    <ion-col size="6">
+      <ion-img src="assets/imgs/ost.png"></ion-img>
     </ion-col>
     <ion-col></ion-col>
   </ion-row>
@@ -10,14 +10,21 @@
     <form (ngSubmit)="login()" #registerForm="ngForm" class="login-box">
       <ion-row>
         <ion-col>
-          <ion-item>
-            <ion-input [(ngModel)]="email" name="email" placeholder="email@example.com"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input type="password" name="password" [(ngModel)]="password" placeholder="password"></ion-input>
-          </ion-item>
+            <h3>Login</h3>
         </ion-col>
       </ion-row>
+      <br>
+      <ion-row>
+        <ion-col>
+            <ion-input [(ngModel)]="email" name="email" placeholder="email@example.com"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+            <ion-input type="password" name="password" [(ngModel)]="password" placeholder="password"></ion-input>
+        </ion-col>
+      </ion-row>
+      <br>
       <ion-button [disabled]="!registerForm.form.valid" (click)="login()" expand="block">
         Login
       </ion-button>

@@ -40,8 +40,8 @@
         </ion-row>
         <ion-row class="content">
           <ion-col>
-            {{ order.isPickedUp ? 'Picked Up' : 'Pending Pickup'}} <br>
-            {{ order.isDelivered ? 'Delivered' : 'Pending Delivery'}}
+            {{ order.isPickedUp && !order.isDelivered ? 'Picked Up' : '' }} <br>
+            {{ order.isDelivered ? 'Delivered' : ' '}}
           </ion-col>
           <ion-col>
             {{order.orderAmount}}
