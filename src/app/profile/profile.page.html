@@ -16,7 +16,7 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-card *ngFor="let user of users">
+          <ion-card *ngIf="user">
             <img class="circle-pic" [src]="user.imageUrl" />
             <ion-card-title>
               User ID: {{user.id}} <br> 
@@ -26,9 +26,22 @@
               Email: {{user.email}}
             </h2>
               <p>
-              Client {{user.clientId}} :
               {{user.isAdmin ? "Admin Privileges" : "No Admin Priveleges"}}</p>
           </ion-card-content>
+          </ion-card>
+          <ion-card *ngIf="client">
+            <ion-card-title>
+              <ion-label color="primary">
+                {{client.name}}
+              </ion-label>
+            </ion-card-title>
+            <ion-card-content>
+              <h5>Address:</h5>
+              <p>{{client.address1}}, {{client.address2}}</p>
+              <p>{{client.city}}, {{client.state}} {{client.zip}}</p>
+              <p>{{client.email}}</p>
+              <p> {{client.phone1}} | {{client.phone2}} </p>
+            </ion-card-content>
           </ion-card>
         </ion-col>
       </ion-row>

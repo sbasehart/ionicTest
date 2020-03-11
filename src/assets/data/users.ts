@@ -11,5 +11,7 @@ export const Users: User[] = [
     resetPassword: false,
     clientId: '12345',
     locationId: '1235',
- }
+    imageUrl: 'http://autokadabra.ru/system/uploads/users/18/18340/small.png?1318432918'
+}
+
 ]

@@ -1,27 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Client } from '../classes/clients';
+import { ClientsService } from '../services/data/clients.service';
+import { User } from '../classes/users';
+import { UsersService } from '../services/data/users.service';
 
 @Component({
   selector: 'app-profile',
   templateUrl: 'profile.page.html',
   styleUrls: ['profile.page.scss']
 })
-export class ProfilePage {
-  users = [
-    {
-      id: 123,
-      email: 'test@test.com',
-      password: 'ghost123',
-      salt: 'yes?',
-      isAdmin: true,
-      resetPassword: false,
-      clientId: '12345',
-      locationId: '1235',
-      imageUrl: 'http://autokadabra.ru/system/uploads/users/18/18340/small.png?1318432918'
-    }
-  ]
+export class ProfilePage implements OnInit {
 
-  constructor() {}
+  users: User[] = [];
+  // clients: Client[] = [];
+  user;
+  client;
 
+  constructor(private usersService: UsersService, private clientsService: ClientsService) {}
 
+  ngOnInit() {
+    this.getUserDetails()
+    this.getClient()
+  }
+
+  getUserDetails(email: any) {
+    this.user = this.usersService.getUserProfile('test@test.com')
+  }
+
+  getClient(id: any) {
+    this.client = this.clientsService.getClient(this.user.clientId)
+  }
 
 }
