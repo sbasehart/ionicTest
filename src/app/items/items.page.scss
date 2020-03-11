@@ -7,21 +7,27 @@ ion-content ion-toolbar {
 ion-item {
   margin: 5px auto;
   max-width: 95%;
-  box-shadow: 2px 3px 5px grey;
+  box-shadow: 2px 3px 5px primary;
   animation: fadeIn 2s ease-out;
   border-radius: 25px;
 }
 
-ion-row {
-  border-bottom: 1px gray solid;
-  border-left: 1px gray solid;
+.id {
+  text-align: center;
+
 }
 
+h5 {
+  margin: 0 auto;
+  padding: 5px;
+  color: darkred
+}
 
 .header {
   font-weight: bold;
   font-size: medium;
-  color: rbga(180,180,180,1)
+  color: rbga(180,180,180,1);
+  border-bottom: 1px gray solid;
 }
 
 .content {

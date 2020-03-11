@@ -10,13 +10,12 @@
   <ion-list lines="none">
     <ion-item *ngFor="let item of items">
       <ion-grid>
-
+          <ion-col class="id" size="12">
+              <h5>Item: {{item.id}}</h5>
+          </ion-col>
         <ion-row class="header">
           <ion-col>
             Route: 
-          </ion-col>
-          <ion-col>
-            Stop:  
           </ion-col>
           <ion-col>
             Vendor:  
@@ -24,16 +23,11 @@
           <ion-col>
             Driver ID:  
           </ion-col>
-          <ion-col>
-            Team Reference ID: 
-          </ion-col>
+
         </ion-row>
         <ion-row class="content">
           <ion-col>
             {{item.routeId}} : {{item.routeName}}
-          </ion-col>
-          <ion-col>
-            {{item.stopId}}
           </ion-col>
           <ion-col>
             {{item.vendorId}} : {{item.vendorName}}
@@ -41,31 +35,51 @@
           <ion-col>
             {{item.driverId}}
           </ion-col>
-          <ion-col>
-            {{item.teamReferenceId}}
-          </ion-col>
+
         </ion-row>
         <br>
         <ion-row class="header">
           <ion-col>
-            Stop Status: 
-          </ion-col>
-          <ion-col>
             Stop #: 
           </ion-col>
           <ion-col>
-            Account: 
+            Stop:  
           </ion-col>
+          <ion-col>
+            Stop Status: 
+          </ion-col>
+
         </ion-row>
         <ion-row class="content">
-          <ion-col>
-            {{item.stopStatus}}
-          </ion-col>
+
           <ion-col>
             {{item.stopNo}}
           </ion-col>
           <ion-col>
+            {{item.stopId}}
+          </ion-col>
+          <ion-col>
+            {{item.stopStatus}}
+          </ion-col>
+
+
+        </ion-row>
+        <br>
+        <ion-row class="header">
+          <ion-col>
+            Account: 
+          </ion-col>
+          <ion-col>
+            Team ID: 
+          </ion-col>
+        </ion-row>
+        <ion-row class="content">
+
+          <ion-col>
             {{item.accountName}}
+          </ion-col>
+          <ion-col>
+            {{item.teamReferenceId}}
           </ion-col>
         </ion-row>
 
@@ -123,6 +137,9 @@
 
         <ion-row class="header">
           <ion-col>
+            Item Status
+          </ion-col>
+          <ion-col>
             Order QTY
           </ion-col>
           <ion-col>
@@ -133,6 +150,9 @@
           </ion-col>
         </ion-row>
         <ion-row class="content">
+          <ion-col>
+            {{item.itemStatus}}
+          </ion-col>
           <ion-col>
             {{item.orderQty}}
           </ion-col>
@@ -178,9 +198,7 @@
         <br>
         
         <ion-row class="header">
-          <ion-col>
-            Item Status
-          </ion-col>
+
           <ion-col>
             Deliver Date
           </ion-col>
@@ -192,9 +210,7 @@
           </ion-col>
         </ion-row>
         <ion-row class="content">
-          <ion-col>
-            {{item.itemStatus}}
-          </ion-col>
+
           <ion-col>
             {{item.deliverDate}}
           </ion-col>
