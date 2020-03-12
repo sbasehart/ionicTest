@@ -14,9 +14,6 @@
       <ion-buttons>
         <ion-back-button defaultHref="tabs/location" text="" icon="arrow-back-outline"></ion-back-button>
       </ion-buttons>
-      <ion-title *ngIf="location">
-        Location: {{location.id}}
-      </ion-title>
     </ion-toolbar>
   <app-location-detail [location]="location" [isEdit]="isEdit" (saveLocationEvent)="saveLocation($event)"
     (editLocationEvent)="editLocation($event)" (deleteLocationEvent)="deleteLocation($event)">

@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Item } from 'src/app/classes/items';
 import * as _ from 'lodash';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-item-detail',
@@ -16,13 +17,14 @@ export class ItemDetailComponent {
   @Output() editItemEvent = new EventEmitter<Item>();
   @Output() deleteItemEvent = new EventEmitter<Item>();
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   saveItem() {
     if (!this.isValidForm()) {
       return false;
     }
     this.saveItemEvent.emit(this.item);
+    this.router.navigateByUrl( `item/${this.item.id}` );
   }
 
   editItem() {
@@ -31,6 +33,8 @@ export class ItemDetailComponent {
 
   deleteItem() {
     this.deleteItemEvent.emit(this.item);
+    this.router.navigateByUrl( 'tabs/items' );
+
   }
 
   isValidForm() {

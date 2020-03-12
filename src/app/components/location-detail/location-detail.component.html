@@ -6,12 +6,21 @@
     <ion-fab-button *ngIf="isEdit">
       <ion-icon name="save-outline" (click)="saveLocation()"></ion-icon>
     </ion-fab-button>
+    <ion-fab-button *ngIf="!isEdit">
+      <ion-icon name="trash" (click)="deleteLocation()"></ion-icon>
+    </ion-fab-button>
   </ion-fab>
 
   <form>
     <ion-list>
       <ion-row>
+        <ion-col class="id" size="12">
+          <h5>Location:</h5>
+          <ion-input required type="text" [(ngModel)]="location.id" [disabled]="!isEdit"
+          name="storeNumber">
+        </ion-input>
 
+        </ion-col>
         <ion-row>
           <ion-col>
             <ion-row>
@@ -95,7 +104,7 @@
               </ion-item>
 
               <ion-item [ngClass]="{hidden: location.removedDate === null && !isEdit}">
-                <ion-label position="stacked" >Removed:
+                <ion-label position="stacked">Removed:
                 </ion-label>
                 <ion-input required type="text"
                   value="{{ location.removedDate.monthName + ' ' + location.removedDate.day + ', ' + location.removedDate.year }}"
@@ -104,7 +113,8 @@
             </ion-row>
             <ion-item>
               <ion-label position="stacked">Notes:</ion-label>
-              <ion-textarea required type="text" [(ngModel)]="location.notes" [disabled]="!isEdit" name="notes" rows="6">
+              <ion-textarea required type="text" [(ngModel)]="location.notes" [disabled]="!isEdit" name="notes"
+                rows="6">
               </ion-textarea>
             </ion-item>
           </ion-col>
@@ -113,45 +123,257 @@
 
     </ion-list>
   </form>
-  <ion-fab-button *ngIf="!isEdit">
-    <ion-icon name="trash" (click)="deleteLocation()"></ion-icon>
-  </ion-fab-button>
+
 </div>
 
+<ion-content >
+  <ion-fab vertical="top" horizontal="end" slot="fixed" *ngIf="item">
+    <ion-fab-button *ngIf="!isEdit">
+      <ion-icon name="create" (click)="editLocation()"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button *ngIf="isEdit">
+      <ion-icon name="save-outline" (click)="saveLocation()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
-
-
-<!-- <ion-content>
+<!-- 
   <ion-list lines="none">
-    <ion-item class="locations" *ngIf="location">
-
+    <ion-item  class="items" *ngIf="item">
       <ion-grid>
+        <ion-col class="id" size="12">
+            <h5>Item: {{item.id}}</h5>
+        </ion-col>
+      <ion-row class="header">
+        <ion-col>
+          Route: 
+        </ion-col>
+        <ion-col>
+          Vendor:  
+        </ion-col>
+        <ion-col>
+          Driver ID:  
+        </ion-col>
 
-        <ion-row class="header">
+      </ion-row>
+      <ion-row class="content">
+        <ion-col>
+          {{item.routeId}} : {{item.routeName}}
+        </ion-col>
+        <ion-col>
+          {{item.vendorId}} : {{item.vendorName}}
+        </ion-col>
+        <ion-col>
+          {{item.driverId}}
+        </ion-col>
 
-          <ion-col size="1"><h4>Status</h4></ion-col>
-          <ion-col size="1"><h4>Store:</h4></ion-col>
-          <ion-col size="1"><h4>Added</h4></ion-col>
-          <ion-col size="1"><h4>Removed</h4></ion-col>
-          <ion-col><h4>Location:</h4></ion-col>
-          <ion-col size="4"><h4>Address:</h4></ion-col>
-          <ion-col size="2"><h4>Contact Info:</h4></ion-col>
+      </ion-row>
+      <br>
+      <ion-row class="header">
+        <ion-col>
+          Stop #: 
+        </ion-col>
+        <ion-col>
+          Stop:  
+        </ion-col>
+        <ion-col>
+          Stop Status: 
+        </ion-col>
 
-        </ion-row>
+      </ion-row>
+      <ion-row class="content">
 
-        <ion-row class="content">
+        <ion-col>
+          {{item.stopNo}}
+        </ion-col>
+        <ion-col>
+          {{item.stopId}}
+        </ion-col>
+        <ion-col>
+          {{item.stopStatus}}
+        </ion-col>
 
-          <ion-col size="1"><div>{{ loc.active ? 'Active' : 'Disabled' }}</div></ion-col>
-          <ion-col size="1"><div>{{loc.storeNumber}}</div></ion-col>
-          <ion-col size="1"><div>{{loc.addedDate | date}}</div></ion-col>
-          <ion-col size="1"><div>{{loc.removedDate | date}}</div></ion-col>
-          <ion-col><div>{{loc.name}}</div></ion-col>
-          <ion-col size="4"><div>{{loc.address1}} <br> {{loc.address2}}<br> {{loc.city}}, {{loc.state}} {{loc.zip}}</div></ion-col>
-          <ion-col size="2"><div><ion-icon name="call-outline"></ion-icon> {{loc.phone1}} | <ion-icon name="call-outline"></ion-icon>{{loc.email}}</div></ion-col>
-          
-        </ion-row>
 
-      </ion-grid>
+      </ion-row>
+      <br>
+      <ion-row class="header">
+        <ion-col>
+          Account: 
+        </ion-col>
+        <ion-col>
+          Team ID: 
+        </ion-col>
+      </ion-row>
+      <ion-row class="content">
+
+        <ion-col>
+          {{item.accountName}}
+        </ion-col>
+        <ion-col>
+          {{item.teamReferenceId}}
+        </ion-col>
+      </ion-row>
+
+      <br>
+      <ion-row class="header">
+        <ion-col>
+          Item Pkg ID
+        </ion-col>
+        <ion-col>
+          SKU
+        </ion-col>
+        <ion-col>
+          Item Type
+        </ion-col>
+      </ion-row>
+      <ion-row class="content">
+        <ion-col>
+          {{item.itemPkgId}}
+        </ion-col>
+        <ion-col>
+          {{item.itemSku}}
+        </ion-col>
+        <ion-col>
+          {{item.itemType}}
+        </ion-col>
+      </ion-row>
+
+      <br>
+
+      <ion-row class="header">
+        <ion-col>
+          Item Desc
+        </ion-col>
+        <ion-col>
+          Price
+        </ion-col>
+        <ion-col>
+          Adjusted Price
+        </ion-col>
+      </ion-row>
+      <ion-row class="content">
+        <ion-col>
+          {{item.itemDesc1}} --
+          {{item.itemDesc2}}
+        </ion-col>
+        <ion-col>
+          {{item.price}}
+        </ion-col>
+        <ion-col>
+          {{item.adjustedPrice}}
+        </ion-col>
+      </ion-row>
+
+      <br>
+
+      <ion-row class="header">
+        <ion-col>
+          Item Status
+        </ion-col>
+        <ion-col>
+          Order QTY
+        </ion-col>
+        <ion-col>
+          Last Order QTY
+        </ion-col>
+        <ion-col>
+          Exception QTY
+        </ion-col>
+      </ion-row>
+      <ion-row class="content">
+        <ion-col>
+          {{item.itemStatus}}
+        </ion-col>
+        <ion-col>
+          {{item.orderQty}}
+        </ion-col>
+        <ion-col>
+          {{item.lastOrderQty}}
+        </ion-col>
+        <ion-col>
+          {{item.exceptionQty}}
+        </ion-col>
+      </ion-row>
+
+      <br>
+
+      <ion-row class="header">
+        <ion-col>
+          Even Exchange
+        </ion-col>
+        <ion-col>
+          Pickup Only
+        </ion-col>
+        <ion-col>
+          Active
+        </ion-col>
+        <ion-col>
+          Billable
+        </ion-col>
+      </ion-row>
+      <ion-row class="content">
+        <ion-col>
+          <ion-checkbox [checked]="item.isEvenExchange"></ion-checkbox>
+        </ion-col>
+        <ion-col>
+          <ion-checkbox [checked]="item.isPickupOnly"></ion-checkbox>
+        </ion-col>
+        <ion-col>
+          <ion-checkbox [checked]="item.isActive"></ion-checkbox>
+        </ion-col>
+        <ion-col>
+          <ion-checkbox [checked]="item.isBillable"></ion-checkbox>
+        </ion-col>
+      </ion-row>
+
+      <br>
+      
+      <ion-row class="header">
+
+        <ion-col>
+          Deliver Date
+        </ion-col>
+        <ion-col>
+          Refusal Reason(s)
+        </ion-col>
+        <ion-col>
+          Rated Value
+        </ion-col>
+      </ion-row>
+      <ion-row class="content">
+
+        <ion-col>
+          {{item.deliverDate}}
+        </ion-col>
+        <ion-col>
+          {{item.refusalReason}}
+        </ion-col>
+        <ion-col>
+          {{item.ratedValue}}
+        </ion-col>
+      </ion-row>
+
+      <br>
+      <ion-row class="header">
+        <ion-col>
+          Notes
+        </ion-col>
+      </ion-row>
+      <ion-row class="content">
+        <ion-col>{{item.notes}}</ion-col>
+      </ion-row>
+
+      <br>
+      <ion-row ion-row class="header">
+        <ion-col>
+          Last updated by {{item.updatedBy}} on {{item.updateDate}}
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
     </ion-item>
   </ion-list>
 </ion-content> -->
+
+
+
+

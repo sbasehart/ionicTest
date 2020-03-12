@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Location } from 'src/app/classes/locations';
 import * as _ from 'lodash';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-location-detail',
@@ -16,7 +17,7 @@ export class LocationDetailComponent {
   @Output() editLocationEvent = new EventEmitter<Location>();
   @Output() deleteLocationEvent = new EventEmitter<Location>();
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   saveLocation() {
     if (!this.isValidForm()) {
@@ -31,6 +32,7 @@ export class LocationDetailComponent {
 
   deleteLocation() {
     this.deleteLocationEvent.emit(this.location);
+    this.router.navigateByUrl( 'tabs/location' );
   }
 
   isValidForm() {

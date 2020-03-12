@@ -49,7 +49,7 @@ saveItem(value: Item) {
 	if ( _.isEmpty(this.itemId) ) {
 		this.itemsService.createItem(value);
 	}
-	this.router.navigate(['/tabs/item']);
+	this.router.navigate(['/tabs/items']);
 }
 
 editItem() {
@@ -58,7 +58,7 @@ editItem() {
 
 deleteItem(value: Item) {
 	this.itemsService.deleteItem(value.id);
-	this.router.navigate(['/tabs/item']);
+	this.router.navigate(['/tabs/items']);
 }
 
 }

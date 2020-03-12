@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Order } from 'src/app/classes/orders';
 import * as _ from 'lodash';
 
@@ -16,7 +17,8 @@ export class OrderDetailComponent {
   @Output() editOrderEvent = new EventEmitter<Order>();
   @Output() deleteOrderEvent = new EventEmitter<Order>();
 
-  constructor() { }
+  constructor(public router: Router
+    ) { }
 
   saveOrder() {
     if (!this.isValidForm()) {
@@ -32,6 +34,7 @@ export class OrderDetailComponent {
 
   deleteOrder() {
     this.deleteOrderEvent.emit(this.order);
+    this.router.navigateByUrl( 'tabs/orders' );
   }
 
   isValidForm() {

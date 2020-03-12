@@ -1,238 +1,239 @@
+<div *ngIf="item">
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button *ngIf="!isEdit">
+      <ion-icon name="create" (click)="editItem()"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button *ngIf="isEdit">
+      <ion-icon name="save-outline" (click)="saveItem()"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button *ngIf="!isEdit">
+      <ion-icon name="trash" (click)="deleteItem()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
-<ion-content>
-  <ion-list lines="none">
-    <ion-item  class="items" *ngIf="item">
-      <ion-grid>
+  <form>
+    <ion-list>
+      <ion-row>
         <ion-col class="id" size="12">
-            <h5>Item: {{item.id}}</h5>
+          <h5>Location:</h5>
+          <ion-input required type="text" [(ngModel)]="item.id" [disabled]="!isEdit" name="storeNumber">
+          </ion-input>
         </ion-col>
-      <ion-row class="header">
-        <ion-col>
-          Route: 
-        </ion-col>
-        <ion-col>
-          Vendor:  
-        </ion-col>
-        <ion-col>
-          Driver ID:  
-        </ion-col>
+        <ion-row>
+          <ion-col>
+            <ion-row>
+              <ion-item>
+                <ion-label position="stacked">Route ID:</ion-label> <br>
+                <ion-input type="text" required [(ngModel)]="item.routeId" [disabled]="!isEdit" name="routeId">
+                </ion-input>
+              </ion-item>
 
-      </ion-row>
-      <ion-row class="content">
-        <ion-col>
-          {{item.routeId}} : {{item.routeName}}
-        </ion-col>
-        <ion-col>
-          {{item.vendorId}} : {{item.vendorName}}
-        </ion-col>
-        <ion-col>
-          {{item.driverId}}
-        </ion-col>
+              <ion-item>
+                <ion-label position="stacked">Route Name:</ion-label> <br>
+                <ion-input type="text" required [(ngModel)]="item.route" [disabled]="!isEdit" name="route"> </ion-input>
+              </ion-item>
 
-      </ion-row>
-      <br>
-      <ion-row class="header">
-        <ion-col>
-          Stop #: 
-        </ion-col>
-        <ion-col>
-          Stop:  
-        </ion-col>
-        <ion-col>
-          Stop Status: 
-        </ion-col>
+              <ion-item>
+                <ion-label position="stacked">Vendor ID:</ion-label> <br>
+                <ion-input type="text" required [(ngModel)]="item.vendorId" [disabled]="!isEdit" name="vendorId">
+                </ion-input>
+              </ion-item>
 
-      </ion-row>
-      <ion-row class="content">
+              <ion-item>
+                <ion-label position="stacked">Vendor Name:</ion-label> <br>
+                <ion-input type="text" required [(ngModel)]="item.vendorName" [disabled]="!isEdit" name="vendorName">
+                </ion-input>
+              </ion-item>
 
-        <ion-col>
-          {{item.stopNo}}
-        </ion-col>
-        <ion-col>
-          {{item.stopId}}
-        </ion-col>
-        <ion-col>
-          {{item.stopStatus}}
-        </ion-col>
+              <ion-item>
+                <ion-label position="stacked">Driver ID:</ion-label> <br>
+                <ion-input type="text" required [(ngModel)]="item.driverId" [disabled]="!isEdit" name="driverId">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Stop Number:</ion-label> <br>
+                <ion-input type="number" required [(ngModel)]="item.stopNo" [disabled]="!isEdit" name="stopNo">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Stop ID:</ion-label> <br>
+                <ion-input required type="text" [(ngModel)]="item.stopId" [disabled]="!isEdit" name="stopId">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Stop Status:</ion-label> <br>
+                <ion-input required type="text" [(ngModel)]="item.stopStatus" [disabled]="!isEdit" name="stopStatus">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Account Name:</ion-label> <br>
+                <ion-input required type="text" [(ngModel)]="item.accountName" [disabled]="!isEdit" name="accountName">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Team ID:</ion-label> <br>
+                <ion-input required type="text" [(ngModel)]="item.teamReferenceId" [disabled]="!isEdit"
+                  name="teamReferenceId"> </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Item Pkg ID:</ion-label> <br>
+                <ion-input required type="text" [(ngModel)]="item.itemPkgId" [disabled]="!isEdit" name="itemPkgId">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">SKU:</ion-label> <br>
+                <ion-input required type="text" [(ngModel)]="item.itemSku" [disabled]="!isEdit" name="itemSku">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Type:</ion-label> <br>
+                <ion-input required type="text" [(ngModel)]="item.itemType" [disabled]="!isEdit" name="itemType">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Item:</ion-label> <br>
+                <ion-input required type="text" [(ngModel)]="item.itemDesc1" [disabled]="!isEdit" name="itemDesc1">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Item Desc:</ion-label> <br>
+                <ion-input required type="text" [(ngModel)]="item.itemDesc2" [disabled]="!isEdit" name="itemDesc2">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Price:</ion-label> <br>
+                <ion-input required type="number" [(ngModel)]="item.price" [disabled]="!isEdit" name="price">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Adj Price:</ion-label> <br>
+                <ion-input required type="number" [(ngModel)]="item.adjustedPrice" [disabled]="!isEdit"
+                  name="adjustedPrice"> </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Item Status:</ion-label> <br>
+                <ion-input required type="text" [(ngModel)]="item.itemStatus" [disabled]="!isEdit" name="itemStatus">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Adj Price:</ion-label> <br>
+                <ion-input required type="number" [(ngModel)]="item.orderQty" [disabled]="!isEdit" name="orderQty">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Last Order QTY:</ion-label> <br>
+                <ion-input required type="number" [(ngModel)]="item.lastOrderQty" [disabled]="!isEdit"
+                  name="lastOrderQty"> </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Exception QTY:</ion-label> <br>
+                <ion-input required type="number" [(ngModel)]="item.exceptionQty" [disabled]="!isEdit"
+                  name="exceptionQty"> </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Cubes:</ion-label> <br>
+                <ion-input required type="number" [(ngModel)]="item.cubes" [disabled]="!isEdit" name="cubes">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Rated Value:</ion-label> <br>
+                <ion-input required type="number" [(ngModel)]="item.ratedValue" [disabled]="!isEdit" name="ratedValue">
+                </ion-input>
+              </ion-item>
 
 
-      </ion-row>
-      <br>
-      <ion-row class="header">
-        <ion-col>
-          Account: 
-        </ion-col>
-        <ion-col>
-          Team ID: 
-        </ion-col>
-      </ion-row>
-      <ion-row class="content">
 
-        <ion-col>
-          {{item.accountName}}
-        </ion-col>
-        <ion-col>
-          {{item.teamReferenceId}}
-        </ion-col>
-      </ion-row>
+              <ion-item>
+                <ion-label position="stacked">Delivered:
+                </ion-label>
+                <ion-input required type="text"
+                  value="{{ item.deliverDate.monthName + ' ' + item.deliverDate.day + ', ' + item.deliverDate.year }}"
+                  [disabled]="!isEdit" name="deliverDate"></ion-input>
+              </ion-item>
 
-      <br>
-      <ion-row class="header">
-        <ion-col>
-          Item Pkg ID
-        </ion-col>
-        <ion-col>
-          SKU
-        </ion-col>
-        <ion-col>
-          Item Type
-        </ion-col>
-      </ion-row>
-      <ion-row class="content">
-        <ion-col>
-          {{item.itemPkgId}}
-        </ion-col>
-        <ion-col>
-          {{item.itemSku}}
-        </ion-col>
-        <ion-col>
-          {{item.itemType}}
-        </ion-col>
-      </ion-row>
+              <ion-item>
+                <ion-label position="stacked">Notes:</ion-label>
+                <ion-textarea required type="text" [(ngModel)]="item.notes" [disabled]="!isEdit" name="notes" rows="6">
+                </ion-textarea>
+              </ion-item>
 
-      <br>
+              <ion-item>
+                <ion-label position="stacked">Refusal Reason(s):</ion-label>
+                <ion-textarea required type="text" [(ngModel)]="item.refusalReason" [disabled]="!isEdit" name="refusalReason" rows="6">
+                </ion-textarea>
+              </ion-item>
 
-      <ion-row class="header">
-        <ion-col>
-          Item Desc
-        </ion-col>
-        <ion-col>
-          Price
-        </ion-col>
-        <ion-col>
-          Adjusted Price
-        </ion-col>
-      </ion-row>
-      <ion-row class="content">
-        <ion-col>
-          {{item.itemDesc1}} --
-          {{item.itemDesc2}}
-        </ion-col>
-        <ion-col>
-          {{item.price}}
-        </ion-col>
-        <ion-col>
-          {{item.adjustedPrice}}
-        </ion-col>
-      </ion-row>
 
-      <br>
+              <ion-item>
+                <ion-row>
+                  <ion-col>
+                    <ion-label position="stacked">Even Exchange:</ion-label> <br>
+                    <ion-checkbox required [checked]="item.isEvenExchange" [(ngModel)]="item.isEvenExchange" [disabled]="!isEdit" name="isEvenExchange">
+                    </ion-checkbox>
+                  </ion-col>
 
-      <ion-row class="header">
-        <ion-col>
-          Item Status
-        </ion-col>
-        <ion-col>
-          Order QTY
-        </ion-col>
-        <ion-col>
-          Last Order QTY
-        </ion-col>
-        <ion-col>
-          Exception QTY
-        </ion-col>
-      </ion-row>
-      <ion-row class="content">
-        <ion-col>
-          {{item.itemStatus}}
-        </ion-col>
-        <ion-col>
-          {{item.orderQty}}
-        </ion-col>
-        <ion-col>
-          {{item.lastOrderQty}}
-        </ion-col>
-        <ion-col>
-          {{item.exceptionQty}}
-        </ion-col>
-      </ion-row>
+                  <ion-col>
+                    <ion-label position="stacked">Pickup Only:</ion-label> <br>
+                    <ion-checkbox required [checked]="item.isEvenExchange" [(ngModel)]="item.isPickupOnly" [disabled]="!isEdit" name="isPickupOnly">
+                    </ion-checkbox>
+                  </ion-col>
 
-      <br>
+                  <ion-col>
+                    <ion-label position="stacked">Active:</ion-label> <br>
+                    <ion-checkbox required [checked]="item.isEvenExchange" [(ngModel)]="item.isActive" [disabled]="!isEdit" name="isActive">
+                    </ion-checkbox>
+                  </ion-col>
 
-      <ion-row class="header">
-        <ion-col>
-          Even Exchange
-        </ion-col>
-        <ion-col>
-          Pickup Only
-        </ion-col>
-        <ion-col>
-          Active
-        </ion-col>
-        <ion-col>
-          Billable
-        </ion-col>
-      </ion-row>
-      <ion-row class="content">
-        <ion-col>
-          <ion-checkbox [checked]="item.isEvenExchange"></ion-checkbox>
-        </ion-col>
-        <ion-col>
-          <ion-checkbox [checked]="item.isPickupOnly"></ion-checkbox>
-        </ion-col>
-        <ion-col>
-          <ion-checkbox [checked]="item.isActive"></ion-checkbox>
-        </ion-col>
-        <ion-col>
-          <ion-checkbox [checked]="item.isBillable"></ion-checkbox>
-        </ion-col>
-      </ion-row>
+                  <ion-col>
+                    <ion-label position="stacked">Billable:</ion-label> <br>
+                    <ion-checkbox required [checked]="item.isEvenExchange" [(ngModel)]="item.isBillable" [disabled]="!isEdit" name="isBillable">
+                    </ion-checkbox>
+                  </ion-col>
+                </ion-row>
 
-      <br>
-      
-      <ion-row class="header">
+              </ion-item>
 
-        <ion-col>
-          Deliver Date
-        </ion-col>
-        <ion-col>
-          Refusal Reason(s)
-        </ion-col>
-        <ion-col>
-          Rated Value
-        </ion-col>
-      </ion-row>
-      <ion-row class="content">
+              <ion-item>
+                <ion-row>
+                  <ion-col>
+                    <ion-label position="stacked">Updated By:</ion-label>
+                    <ion-textarea required type="text" [(ngModel)]="item.updatedBy" [disabled]="!isEdit" name="updatedBy" rows="6">
+                    </ion-textarea> 
+                  </ion-col>
+                  <ion-col>
+                    <ion-label position="stacked">On:</ion-label>
+                    <ion-input required type="text"
+                      value="{{ item.updateDate.monthName + ' ' + item.updateDate.day + ', ' + item.updateDate.year }}"
+                      [disabled]="!isEdit" name="updateDate" ></ion-input>
+                  </ion-col>
+                </ion-row>
+              </ion-item>
 
-        <ion-col>
-          {{item.deliverDate}}
-        </ion-col>
-        <ion-col>
-          {{item.refusalReason}}
-        </ion-col>
-        <ion-col>
-          {{item.ratedValue}}
-        </ion-col>
-      </ion-row>
+            </ion-row>
 
-      <br>
-      <ion-row class="header">
-        <ion-col>
-          Notes
-        </ion-col>
-      </ion-row>
-      <ion-row class="content">
-        <ion-col>{{item.notes}}</ion-col>
+          </ion-col>
+        </ion-row>
       </ion-row>
 
-      <br>
-      <ion-row ion-row class="header">
-        <ion-col>
-          Last updated by {{item.updatedBy}} on {{item.updateDate}}
-        </ion-col>
-      </ion-row>
+    </ion-list>
+  </form>
 
-    </ion-grid>
-    </ion-item>
-  </ion-list>
-</ion-content>
+</div>

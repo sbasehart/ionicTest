@@ -49,7 +49,7 @@ saveOrder(value: Order) {
 	if ( _.isEmpty(this.orderId) ) {
 		this.ordersService.createOrder(value);
 	}
-	this.router.navigate(['/tabs/order']);
+	this.router.navigate(['/tabs/orders']);
 }
 
 editOrder() {
@@ -58,7 +58,7 @@ editOrder() {
 
 deleteOrder(value: Order) {
 	this.ordersService.deleteOrder(value.id);
-	this.router.navigate(['/tabs/order']);
+	this.router.navigate(['/tabs/orders']);
 }
 
 }
