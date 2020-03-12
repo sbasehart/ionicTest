@@ -19,38 +19,6 @@ export class SettingsPage implements OnInit {
     this.storage.get('toggle').then(disc => this.toggleOn = disc);
   }
 
-  async onClearFavorites() {
-    const alert = await this.alertController.create({
-      header: 'Please confirm',
-      message: 'Delete All Favorites?',
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: () => {
-            console.log('Unfavorite cancelled');
-          }
-        }, {
-          text: 'Okay',
-          handler: () => {
-            this.storage.remove('favorite')
-            this.favoritesRemoved()
-          }
-        }
-      ]
-    });
-    await alert.present();
-  }
-
-  async favoritesRemoved() {
-    const toast = await this.toastController.create({
-      message: `All Favorites Removed`,
-      duration: 2000
-    });
-    toast.present();
-  }
-
   darkToggle() {
     // Use matchMedia to check the user preference
     const toggle = document.querySelector('#themeToggle') as HTMLIonToggleElement;

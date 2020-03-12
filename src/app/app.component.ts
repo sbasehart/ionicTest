@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthenticationService } from './services/authentication.service';
 import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ export class AppComponent {
     private statusBar: StatusBar,
     private authService: AuthenticationService,
     public menuCtrl: MenuController,
-    public router: Router
+    public router: Router,
+    private storage: Storage
   ) {
     // function loadApp() {
     //   checkToggle(prefersDark.matches);
@@ -32,6 +34,9 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+    });
+    this.storage.get('toggle').then((val) => {
+      console.log(val);
     });
   }
 

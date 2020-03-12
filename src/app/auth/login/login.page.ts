@@ -62,7 +62,7 @@ export class LoginPage {
   }
 
   goHome() {
-    this.router.navigateByUrl('tabs/location');
+    this.router.navigateByUrl('tabs/orders');
   }
 
   async presentAlert() {
