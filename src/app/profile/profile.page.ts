@@ -19,16 +19,16 @@ export class ProfilePage implements OnInit {
   constructor(private usersService: UsersService, private clientsService: ClientsService) {}
 
   ngOnInit() {
-    this.getUserDetails()
-    this.getClient()
+    this.getUserDetails('test@test.com')
+    this.getClient(this.user.clientId)
   }
 
   getUserDetails(email: any) {
-    this.user = this.usersService.getUserProfile('test@test.com')
+    this.user = this.usersService.getUserProfile(email)
   }
 
   getClient(id: any) {
-    this.client = this.clientsService.getClient(this.user.clientId)
+    this.client = this.clientsService.getClient(id)
   }
 
 }

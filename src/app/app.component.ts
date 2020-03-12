@@ -22,9 +22,9 @@ export class AppComponent {
     public menuCtrl: MenuController,
     public router: Router
   ) {
-    function loadApp() {
-      checkToggle(prefersDark.matches);
-    }
+    // function loadApp() {
+    //   checkToggle(prefersDark.matches);
+    // }
     this.initializeApp();
   }
 
