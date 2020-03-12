@@ -15,7 +15,6 @@ import { Storage } from '@ionic/storage';
 export class AppComponent {
   navigate : any;
   prefersDarkOn: boolean;
-  prefersDark: boolean
 
   constructor(
     private platform: Platform,
@@ -39,7 +38,7 @@ export class AppComponent {
   }
 
   checktoggle() {
-    this.storage.get('prefersDark').then((val) => {
+    this.storage.get('disclaimer').then((val) => {
       if (val = true) {
         this.prefersDarkOn = true
         this.darkToggle()
@@ -80,11 +79,11 @@ export class AppComponent {
     function checkToggle(shouldCheck) {
       toggle.checked = shouldCheck;
       if(toggle.checked == true) {
-        this.prefersDark = true
+        this.prefersDarkOn = true
         this.storage.set('disclaimer', JSON.stringify(this.prefersDarkOn));//save true
         this.storage.set('disclaimer', this.prefersDarkOn);
       } else {
-        this.prefersDark = false
+        this.prefersDarkOn = false
         this.storage.set('disclaimer', JSON.stringify(this.prefersDarkOn));//save true
         this.storage.remove('disclaimer', this.prefersDarkOn);
         console.log("no dark mode")
