@@ -14,7 +14,7 @@
           <ion-label>
             Dark Theme
           </ion-label>
-          <ion-toggle id="themeToggle" slot="end" checked="{{prefersDarkOn ? true : false}}" (click)="darkToggle()"></ion-toggle>
+          <ion-toggle id="themeToggle" slot="end" [checked]="prefersDarkOn" (click)="darkToggle()"></ion-toggle>
         </ion-item>
         <ion-item href="" routerDirection="root">App Home</ion-item>
         <ion-item href="settings" routerDirection="root">Settings</ion-item>

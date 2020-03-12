@@ -77,17 +77,10 @@ export class AppComponent {
 
     // Called by the media query to check/uncheck the toggle
     function checkToggle(shouldCheck) {
-      toggle.checked = shouldCheck;
-      if(toggle.checked == true) {
-        this.prefersDarkOn = true
+      toggle.checked = shouldCheck 
+        this.prefersDarkOn = !this.prefersDarkOn
         this.storage.set('disclaimer', JSON.stringify(this.prefersDarkOn));//save true
-        this.storage.set('disclaimer', this.prefersDarkOn);
-      } else {
-        this.prefersDarkOn = false
-        this.storage.set('disclaimer', JSON.stringify(this.prefersDarkOn));//save true
-        this.storage.remove('disclaimer', this.prefersDarkOn);
-        console.log("no dark mode")
-      }
+        this.storage.set('disclaimer', this.prefersDarkOn)
     }
 
   }
