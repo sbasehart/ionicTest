@@ -28,6 +28,11 @@ export class UsersService {
     return filteredUser;
   }
 
+  getUserLogin(email: any, password:any): any {
+    const filteredUser = this.users.filter(user => user.email == email && user.password == password)[0];
+    return filteredUser;
+  }
+
   createUser(newUser: User): number {
     newUser.id = this.nextUserId();
     this.users.push(newUser);
