@@ -14,6 +14,7 @@ import { Storage } from '@ionic/storage';
 })
 export class AppComponent {
   navigate : any;
+  prefersDarkOn: boolean;
 
   constructor(
     private platform: Platform,
@@ -24,9 +25,7 @@ export class AppComponent {
     public router: Router,
     private storage: Storage
   ) {
-    // function loadApp() {
-    //   checkToggle(prefersDark.matches);
-    // }
+    this.checktoggle()
     this.initializeApp();
   }
 
@@ -35,9 +34,20 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
-    this.storage.get('toggle').then((val) => {
-      console.log(val);
-    });
+    
+  }
+
+  checktoggle() {
+    this.storage.get('disclaimer').then((val) => {
+      if (val = true) {
+        this.prefersDarkOn = true
+        this.darkToggle()
+        console.log("dark mode")
+      } else {
+        this.prefersDarkOn = false
+        console.log("no dark mode")
+      }
+    })
   }
 
   logout() {
@@ -68,8 +78,12 @@ export class AppComponent {
     // Called by the media query to check/uncheck the toggle
     function checkToggle(shouldCheck) {
       toggle.checked = shouldCheck;
-      this.storage.set('toggle', JSON.stringify(this.toggleOn));
-      this.storage.set('toggle', this.toggleOn);
+      this.prefersDarkOn = !this.prefersDarkOn;
+
     }
+    this.storage.set('disclaimer', JSON.stringify(this.prefersDarkOn));//save true
+    this.storage.set('disclaimer', this.prefersDarkOn);
   }
+
+  
 }
