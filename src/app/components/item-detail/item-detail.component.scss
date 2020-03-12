@@ -2,12 +2,47 @@ ion-content ion-toolbar {
   --background: translucent;
 }
 
-ion-item {
-  margin: 5px auto;
-  max-width: 95%;
-  box-shadow: 2px 3px 5px primary;
-  animation: fadeIn 2s ease-out;
-  border-radius: 25px;
+@media only screen and (max-width: 600px) {
+  ion-item {
+      margin: 5px auto;
+      max-width: 45%;
+      box-shadow: 2px 3px 5px grey;
+      animation: fadeIn 2s ease-out;
+      border-radius: 25px;
+  }
+  ion-input {
+      text-align: center;
+      margin: 5px;
+      font-size: small;
+  }
+  .content {
+    font-size: small;
+  }
+}
+
+
+@media only screen and (min-width: 601px) {
+  ion-item {
+      margin: 5px auto;
+      min-width: 200px;
+      min-height:200px;
+      align-content: center;
+      align-items: center;
+      align-self: center;
+      vertical-align: middle;
+      box-shadow: 2px 3px 5px grey;
+      animation: fadeIn 2s ease-out;
+      border-radius: 25px;
+      font-size: large;
+  }
+  ion-input {
+      text-align: center;
+      margin: 20px auto;
+      font-size: large;
+  }
+  .content {
+    font-size: medium;
+  }
 }
 
 .id {
@@ -28,6 +63,3 @@ h5 {
   border-bottom: 1px gray solid;
 }
 
-.content {
-  font-size: small;
-}
