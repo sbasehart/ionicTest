@@ -18,7 +18,25 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+@media only screen and (max-width: 600px) {
+    ion-item {
+        margin: 7px auto;
+        max-width: 95%;
+        box-shadow: 2px 3px 5px grey;
+        animation: fadeIn 2s ease-out;
+        border-radius: 25px;
+    }
+  }
 
+  @media only screen and (min-width: 600px) {
+    ion-item {
+        margin: 7px auto;
+        max-width: 900px;
+        box-shadow: 2px 3px 5px grey;
+        animation: fadeIn 2s ease-out;
+        border-radius: 25px;
+    }
+  }
 
 ion-list{
     min-height: 100vh;
@@ -48,13 +66,7 @@ ion-slides {
     --scroll-bar-background: primary
 }
 
-ion-item {
-    margin: 7px auto;
-    max-width: 95%;
-    box-shadow: 2px 3px 5px grey;
-    animation: fadeIn 2s ease-out;
-    border-radius: 25px;
-}
+
 
 ion-item{ --border-color: white; border: 1px solid white }
 

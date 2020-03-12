@@ -26,8 +26,6 @@ export class UsersService {
   getUserProfile(email: any): any {
     const filteredUser = this.users.filter(user => user.email == email)[0];
     return filteredUser;
-    const filteredClient = this.clients.filter(client => user.clientId == id)[0];
-    return filteredClient;
   }
 
   createUser(newUser: User): number {
