@@ -6,7 +6,8 @@ ion-content ion-toolbar {
 
 ion-item {
   margin: 5px auto;
-  max-width: 95%;
+  min-width: 350px;
+  max-width: 75%;
   box-shadow: 2px 3px 5px primary;
   animation: fadeIn 2s ease-out;
   border-radius: 25px;
