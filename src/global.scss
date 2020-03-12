@@ -49,12 +49,14 @@ ion-slides {
 }
 
 ion-item {
-    margin: 5px auto;
+    margin: 7px auto;
     max-width: 95%;
     box-shadow: 2px 3px 5px grey;
     animation: fadeIn 2s ease-out;
     border-radius: 25px;
 }
+
+ion-item{ --border-color: white; border: 1px solid white }
 
 .header-icon {
     animation: moveInLeft 1.7s ease-in;
