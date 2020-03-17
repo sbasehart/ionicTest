@@ -65,6 +65,9 @@ ion-slides {
     overflow: scroll;
     --scroll-bar-background: primary
 }
+ion-label {
+    --color: var(--primary)
+}
 
 
 
