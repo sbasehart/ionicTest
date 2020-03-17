@@ -76,7 +76,7 @@
               <ion-item>
                 <ion-label position="stacked">Order Amount:</ion-label>
                 <ion-input currencyMask required type="number" [(ngModel)]="order.orderAmount" [disabled]="!isEdit"
-                  name="orderAmount" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+                  name="orderAmount">
                 </ion-input>
 
               </ion-item>

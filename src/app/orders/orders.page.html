@@ -44,7 +44,7 @@
             {{ order.isDelivered ? 'Delivered' : ' '}}
           </ion-col>
           <ion-col>
-            {{order.orderAmount}}
+            {{order.orderAmount | currency}}
           </ion-col>
           <ion-col>
             {{order.itemCount}}
