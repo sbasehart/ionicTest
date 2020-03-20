@@ -20,9 +20,11 @@ export class LocationDetailComponent {
   constructor(private router: Router) { }
 
   saveLocation() {
-    if (!this.isValidForm()) {
-      return false;
-    }
+    // if (!this.isValidForm()) {
+    //   return false;
+    // }
+    this.router.navigateByUrl( '/tabs/locations'  );
+    this.isEdit = false
     this.saveLocationEvent.emit(this.location);
   }
 

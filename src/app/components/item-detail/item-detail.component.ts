@@ -20,11 +20,13 @@ export class ItemDetailComponent {
   constructor(public router: Router) { }
 
   saveItem() {
-    if (!this.isValidForm()) {
-      return false;
-    }
+    // if (!this.isValidForm()) {
+    //   return false;
+    // }
+    this.router.navigateByUrl( '/tabs/items'  );
+    this.isEdit = false
     this.saveItemEvent.emit(this.item);
-    this.router.navigateByUrl( `item/${this.item.id}` );
+    // this.router.navigateByUrl( `item/${this.item.id}` );
   }
 
   editItem() {
