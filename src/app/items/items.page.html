@@ -3,8 +3,14 @@
     <ion-title>
       Items
     </ion-title>
-    <ion-icon slot="end" *ngIf="!toggled" (click)="toggle()" name="search"></ion-icon>
-  </ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/new-item">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="!toggled" (click)="toggle()">
+        <ion-icon  name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>  </ion-toolbar>
   <ion-toolbar *ngIf="toggled">
     <ion-searchbar
     (ionInput)="searchThis($event)"
