@@ -1,13 +1,13 @@
 <div *ngIf="item">
   <ion-fab vertical="top" horizontal="end" slot="fixed">
-    <ion-fab-button *ngIf="!isEdit">
-      <ion-icon name="create" (click)="editItem()"></ion-icon>
+    <ion-fab-button *ngIf="!isEdit" (click)="editItem()">
+      <ion-icon name="create" ></ion-icon>
     </ion-fab-button>
-    <ion-fab-button *ngIf="isEdit">
-      <ion-icon name="save-outline" (click)="saveItem()"></ion-icon>
+    <ion-fab-button *ngIf="isEdit" (click)="saveItem()">
+      <ion-icon name="save-outline" ></ion-icon>
     </ion-fab-button>
-    <ion-fab-button *ngIf="!isEdit">
-      <ion-icon name="trash" (click)="deleteItem()"></ion-icon>
+    <ion-fab-button *ngIf="!isEdit" (click)="deleteItem()">
+      <ion-icon name="trash" ></ion-icon>
     </ion-fab-button>
   </ion-fab>
 

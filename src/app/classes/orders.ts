@@ -9,7 +9,7 @@ export class Order {
     status: string;
     soNumber: number;
     itemCount: number;
-    items: Array<Item>;
+    items?: Array<Item>;
     orderDate?: CustomDate;
     pickupDate?: CustomDate;
     deliverDate?: CustomDate;
