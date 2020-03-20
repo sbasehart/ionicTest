@@ -22,7 +22,7 @@ export class ItemsService {
     return filteredItem;
   }
 
-  createItem(newItem: Item): number {
+  createItem(newItem: Item): any {
     newItem.id = this.nextItemId();
     this.items.push(newItem);
     return newItem.id;
