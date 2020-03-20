@@ -21,11 +21,12 @@ export class OrderDetailComponent {
     ) { }
 
   saveOrder() {
-    if (!this.isValidForm()) {
-      return false;
-    }
+    // if (!this.isValidForm()) {
+    //   return false;
+    // }
+    this.router.navigateByUrl( '/tabs/orders'  );
+    this.isEdit = false
     this.saveOrderEvent.emit(this.order);
-    
   }
 
   editOrder() {
